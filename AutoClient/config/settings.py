@@ -24,7 +24,7 @@ TEST_MODE = False
 MODE = 'ssh'
 
 # 如果采用SSH方式，则需要配置SSH的KEY和USER
-SSH_PRIVATE_KEY = "/root/.ssh/id_rsa"
+SSH_PRIVATE_KEY = "/Users/yky/.ssh/id_rsa"
 SSH_USER = "root"
 SSH_PORT = 22
 

@@ -99,7 +99,7 @@ class AutoBase(object):
         """
         status = True
         try:
-            print(msg)
+
             headers = {}
             headers.update(self.auth_key())
             response = requests.post(

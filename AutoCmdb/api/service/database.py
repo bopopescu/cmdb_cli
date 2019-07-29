@@ -16,9 +16,7 @@ import datetime
 
 def get_untreated_database():
     response = BaseResponse()
-
     try:
-
         # 获取所有mha架构的数据库信息：
         result = models.MysqlInfo.objects.all().values('hostname', 'ip')
         response.data = list(result)
