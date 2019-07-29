@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-ZN">
+<head>
+    <meta charset="UTF-8">
+    <title>Resister</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/web/static/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/web/static/fontAwesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/web/static/fontAwesome/css/brands.css">
+    <link rel="stylesheet" href="/web/static/fontAwesome/css/solid.css">
+    <link rel="stylesheet" href="/web/static/css/mystyle.css">
+</head>
+<body>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <form action="/register.html/" method="post" class=" reg-form" enctype="multipart/form-data" novalidate>
+                {% csrf_token %}
+                <div class="form-group {% if user_obj.username.errors.0 %}has-error{% endif %}">
+                    <label for="{{ user_obj.username.id_for_label }}"
+                           class="col-sm-2 control-label">{{ user_obj.username.label }}</label>
+                    <div class="col-sm-10">
+                        {{ user_obj.username }}
+                        <span class="help-block">{{ user_obj.username.errors.0 }}</span>
+                    </div>
+                </div>
+
+                <div class="form-group {% if user_obj.password.errors.0 %}has-error{% endif %}">
+                    <label for="{{ user_obj.password.id_for_label }}"
+                           class="col-sm-2 control-label">{{ user_obj.password.label }}</label>
+                    <div class="col-sm-10">
+                        {{ user_obj.password }}
+                        <span class="help-block">{{ user_obj.password.errors.0 }}</span>
+                    </div>
+                </div>
+
+                <div class="form-group {% if user_obj.re_password.errors.0 %}has-error{% endif %}">
+                    <label for="{{ user_obj.re_password.id_for_label }}"
+                           class="col-sm-2 control-label">{{ user_obj.re_password.label }}</label>
+                    <div class="col-sm-10">
+                        {{ user_obj.re_password }}
+                        <span class="help-block">{{ user_obj.re_password.errors.0 }}</span>
+                    </div>
+                </div>
+
+                <div class="form-group {% if user_obj.email.errors.0 %}has-error{% endif %}">
+                    <label for="{{ user_obj.email.id_for_label }}"
+                           class="col-sm-2 control-label">{{ user_obj.email.label }}</label>
+                    <div class="col-sm-10">
+                        {{ user_obj.email }}
+                        <span class="help-block">{{ user_obj.email.errors.0 }}</span>
+                    </div>
+                </div>
+
+                <div class="form-group {% if user_obj.phone.errors.0 %}has-error{% endif %}">
+                    <label for="{{ user_obj.phone.id_for_label }}"
+                           class="col-sm-2 control-label">{{ user_obj.phone.label }}</label>
+                    <div class="col-sm-10">
+                        {{ user_obj.phone }}
+                        <span class="help-block">{{ user_obj.phone.errors.0 }}</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="button" class="btn btn-success" id="reg-submit">注册</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/web/static/js/jquery-3.3.1.min.js"></script>
+<script src="/web/static/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+<script>
+
+    {#    AJAX 提交#}
+    $("#reg-submit").on('click', function () {
+        var formData = new FormData;
+        formData.append('username', $('#id_username').val());
+        formData.append('password', $('#id_password').val());
+        formData.append('re_password', $('#id_re_password').val());
+        formData.append('email', $('#id_email').val());
+        formData.append('phone', $('#id_phone').val());
+        formData.append('csrfmiddlewaretoken', $('[name="csrfmiddlewaretoken"]').val());
+
+        $.ajax({
+            url: '/register.html/',
+            type: 'POST',
+            processData: false,   // ajax传文件需要加
+            contentType: false,   // ajax传文件需要加
+            data: formData,
+            success: function (data) {
+                if (data.status) {
+                    // 有错误就展示错误
+                    // 将报错信息打印出来
+                    $.each(data.msg, function (k, v) {
+                        {#console.log('id_' + k, v[0])#}
+                        {#console.log($("#id_" + k));#}
+                        $("#id_" + k).next('span').text(v[0]).parent().parent().addClass('has-error')
+
+                    })
+                } else {
+                    // 没有错误跳到指定页面
+                    location.href = data.msg
+                }
+            }, error: function (data) {
+                alert('error')
+            }
+        })
+    });
+
+    {#    将所有的input标签绑定获取焦点事件，将所有错误信息清空#}
+    $("form input").focus(function () {
+        $(this).next('span').text('').parent().parent().removeClass('has-error');
+    });
+
+    // 校验username 是否存在，绑定blur失去焦点事件，事件获取用户名发送到后台，然后后台校验。
+    $("#id_username").blur(function () {
+        var username = $(this).val();
+        console.log(username);
+        $.ajax({
+            url: '/username_exists_check/',
+            type: 'get',
+            data: {'username':username},
+            success: function (data) {
+                {#console.log(data);#}
+                if (data.status){
+                    // 验证失败给提示报错
+                    $("#id_username").next('span').text(data.msg).parent().parent().addClass('has-error')
+                }
+            }
+        })
+    })
+
+    $("#id_email").blur(function () {
+        var email = $(this).val();
+        {#alert(123);#}
+        console.log(email);
+        $.ajax({
+            url: '/username_exists_check/',
+            type: 'get',
+            data: {'username':email},
+            success: function (data) {
+                {#console.log(data);#}
+                if (data.status){
+                    // 验证失败给提示报错
+                    $("#id_email").next('span').text(data.msg).parent().parent().addClass('has-error')
+                }
+            }
+        })
+    })
+
+</script>
+
+</body>
+</html>
