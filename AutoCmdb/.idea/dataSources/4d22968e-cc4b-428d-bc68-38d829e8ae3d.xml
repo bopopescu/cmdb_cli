@@ -984,131 +984,130 @@
     <table id="264" parent="4" name="idc"/>
     <table id="265" parent="4" name="memory"/>
     <table id="266" parent="4" name="mysqlinfo"/>
-    <table id="267" parent="4" name="mysqlinitinfo"/>
-    <table id="268" parent="4" name="networkdevice"/>
-    <table id="269" parent="4" name="nic"/>
-    <table id="270" parent="4" name="repository_dbchangelog"/>
-    <table id="271" parent="4" name="restoredb"/>
-    <table id="272" parent="4" name="server"/>
-    <table id="273" parent="4" name="tag"/>
-    <table id="274" parent="4" name="usergroup"/>
-    <table id="275" parent="4" name="usergroup_users"/>
-    <table id="276" parent="4" name="userprofile"/>
-    <table id="277" parent="4" name="userprofile_groups"/>
-    <table id="278" parent="4" name="userprofile_user_permissions"/>
-    <column id="279" parent="246" name="id">
+    <table id="267" parent="4" name="networkdevice"/>
+    <table id="268" parent="4" name="nic"/>
+    <table id="269" parent="4" name="repository_dbchangelog"/>
+    <table id="270" parent="4" name="restoredb"/>
+    <table id="271" parent="4" name="server"/>
+    <table id="272" parent="4" name="tag"/>
+    <table id="273" parent="4" name="usergroup"/>
+    <table id="274" parent="4" name="usergroup_users"/>
+    <table id="275" parent="4" name="userprofile"/>
+    <table id="276" parent="4" name="userprofile_groups"/>
+    <table id="277" parent="4" name="userprofile_user_permissions"/>
+    <column id="278" parent="246" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="280" parent="246" name="username">
+    <column id="279" parent="246" name="username">
       <Position>2</Position>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="281" parent="246" name="password">
+    <column id="280" parent="246" name="password">
       <Position>3</Position>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="282" parent="246" name="user_info_id">
+    <column id="281" parent="246" name="user_info_id">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="283" parent="246" name="user_info_id">
+    <index id="282" parent="246" name="user_info_id">
       <ColNames>user_info_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="284" parent="246" name="PRIMARY">
+    <key id="283" parent="246" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="285" parent="246" name="user_info_id">
+    <key id="284" parent="246" name="user_info_id">
       <ColNames>user_info_id</ColNames>
       <UnderlyingIndexName>user_info_id</UnderlyingIndexName>
     </key>
-    <foreign-key id="286" parent="246" name="AdminInfo_user_info_id_a6f2f874_fk_UserProfile_id">
+    <foreign-key id="285" parent="246" name="AdminInfo_user_info_id_a6f2f874_fk_UserProfile_id">
       <ColNames>user_info_id</ColNames>
       <RefSchemaName>cmdb_mha</RefSchemaName>
       <RefTableName>userprofile</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="287" parent="247" name="id">
+    <column id="286" parent="247" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="288" parent="247" name="meta_ip">
+    <column id="287" parent="247" name="meta_ip">
       <Position>2</Position>
       <DataType>char(39)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="289" parent="247" name="meta_port">
+    <column id="288" parent="247" name="meta_port">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="290" parent="247" name="meta_dbname">
+    <column id="289" parent="247" name="meta_dbname">
       <Position>4</Position>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="291" parent="247" name="arch_ip">
+    <column id="290" parent="247" name="arch_ip">
       <Position>5</Position>
       <DataType>char(39)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="292" parent="247" name="arch_port">
+    <column id="291" parent="247" name="arch_port">
       <Position>6</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="293" parent="247" name="arch_dbname">
+    <column id="292" parent="247" name="arch_dbname">
       <Position>7</Position>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="294" parent="247" name="tablename">
+    <column id="293" parent="247" name="tablename">
       <Position>8</Position>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="295" parent="247" name="backup_crontab_time">
+    <column id="294" parent="247" name="backup_crontab_time">
       <Position>9</Position>
       <DataType>datetime(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="296" parent="247" name="last_archive_time">
+    <column id="295" parent="247" name="last_archive_time">
       <Position>10</Position>
       <DataType>datetime(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="297" parent="247" name="create_time">
+    <column id="296" parent="247" name="create_time">
       <Position>11</Position>
       <DataType>datetime(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="298" parent="247" name="ArchiveTableInfo_tablename_meta_dbname_me_f45fbdb8_uniq">
+    <index id="297" parent="247" name="ArchiveTableInfo_tablename_meta_dbname_me_f45fbdb8_uniq">
       <ColNames>tablename
 meta_dbname
 meta_ip
@@ -1117,12 +1116,12 @@ meta_port</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="299" parent="247" name="PRIMARY">
+    <key id="298" parent="247" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="300" parent="247" name="ArchiveTableInfo_tablename_meta_dbname_me_f45fbdb8_uniq">
+    <key id="299" parent="247" name="ArchiveTableInfo_tablename_meta_dbname_me_f45fbdb8_uniq">
       <ColNames>tablename
 meta_dbname
 meta_ip
@@ -1130,602 +1129,620 @@ arch_ip
 meta_port</ColNames>
       <UnderlyingIndexName>ArchiveTableInfo_tablename_meta_dbname_me_f45fbdb8_uniq</UnderlyingIndexName>
     </key>
-    <column id="301" parent="248" name="id">
+    <column id="300" parent="248" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="302" parent="248" name="device_type_id">
+    <column id="301" parent="248" name="device_type_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="303" parent="248" name="device_status_id">
+    <column id="302" parent="248" name="device_status_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="304" parent="248" name="cabinet_num">
+    <column id="303" parent="248" name="cabinet_num">
       <Position>4</Position>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="305" parent="248" name="cabinet_order">
+    <column id="304" parent="248" name="cabinet_order">
       <Position>5</Position>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="306" parent="248" name="latest_date">
+    <column id="305" parent="248" name="latest_date">
       <Position>6</Position>
       <DataType>date|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="307" parent="248" name="create_at">
+    <column id="306" parent="248" name="create_at">
       <Position>7</Position>
       <DataType>datetime(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="308" parent="248" name="business_unit_id">
+    <column id="307" parent="248" name="business_unit_id">
       <Position>8</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="309" parent="248" name="idc_id">
+    <column id="308" parent="248" name="idc_id">
       <Position>9</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="310" parent="248" name="Asset_business_unit_id_7ad06f08_fk_BusinessUnit_id">
+    <index id="309" parent="248" name="Asset_business_unit_id_7ad06f08_fk_BusinessUnit_id">
       <ColNames>business_unit_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="311" parent="248" name="Asset_idc_id_428b77ad_fk_IDC_id">
+    <index id="310" parent="248" name="Asset_idc_id_428b77ad_fk_IDC_id">
       <ColNames>idc_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="312" parent="248" name="PRIMARY">
+    <key id="311" parent="248" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="313" parent="248" name="Asset_business_unit_id_7ad06f08_fk_BusinessUnit_id">
+    <foreign-key id="312" parent="248" name="Asset_business_unit_id_7ad06f08_fk_BusinessUnit_id">
       <ColNames>business_unit_id</ColNames>
       <RefSchemaName>cmdb_mha</RefSchemaName>
       <RefTableName>businessunit</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="314" parent="248" name="Asset_idc_id_428b77ad_fk_IDC_id">
+    <foreign-key id="313" parent="248" name="Asset_idc_id_428b77ad_fk_IDC_id">
       <ColNames>idc_id</ColNames>
       <RefSchemaName>cmdb_mha</RefSchemaName>
       <RefTableName>idc</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="315" parent="249" name="id">
+    <column id="314" parent="249" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="316" parent="249" name="asset_id">
+    <column id="315" parent="249" name="asset_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="317" parent="249" name="tag_id">
+    <column id="316" parent="249" name="tag_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="318" parent="249" name="Asset_tag_asset_id_tag_id_6a4eb97c_uniq">
+    <index id="317" parent="249" name="Asset_tag_asset_id_tag_id_6a4eb97c_uniq">
       <ColNames>asset_id
 tag_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="319" parent="249" name="Asset_tag_tag_id_b1bdde86_fk_Tag_id">
+    <index id="318" parent="249" name="Asset_tag_tag_id_b1bdde86_fk_Tag_id">
       <ColNames>tag_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="320" parent="249" name="PRIMARY">
+    <key id="319" parent="249" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="321" parent="249" name="Asset_tag_asset_id_tag_id_6a4eb97c_uniq">
+    <key id="320" parent="249" name="Asset_tag_asset_id_tag_id_6a4eb97c_uniq">
       <ColNames>asset_id
 tag_id</ColNames>
       <UnderlyingIndexName>Asset_tag_asset_id_tag_id_6a4eb97c_uniq</UnderlyingIndexName>
     </key>
-    <foreign-key id="322" parent="249" name="Asset_tag_asset_id_6f86d70f_fk_Asset_id">
+    <foreign-key id="321" parent="249" name="Asset_tag_asset_id_6f86d70f_fk_Asset_id">
       <ColNames>asset_id</ColNames>
       <RefSchemaName>cmdb_mha</RefSchemaName>
       <RefTableName>asset</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="323" parent="249" name="Asset_tag_tag_id_b1bdde86_fk_Tag_id">
+    <foreign-key id="322" parent="249" name="Asset_tag_tag_id_b1bdde86_fk_Tag_id">
       <ColNames>tag_id</ColNames>
       <RefSchemaName>cmdb_mha</RefSchemaName>
       <RefTableName>tag</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="324" parent="250" name="id">
+    <column id="323" parent="250" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="325" parent="250" name="content">
+    <column id="324" parent="250" name="content">
       <Position>2</Position>
       <DataType>longtext|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="326" parent="250" name="create_at">
+    <column id="325" parent="250" name="create_at">
       <Position>3</Position>
       <DataType>datetime(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="327" parent="250" name="asset_obj_id">
+    <column id="326" parent="250" name="asset_obj_id">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="328" parent="250" name="creator_id">
+    <column id="327" parent="250" name="creator_id">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="329" parent="250" name="AssetRecord_asset_obj_id_8724f0db_fk_Asset_id">
+    <index id="328" parent="250" name="AssetRecord_asset_obj_id_8724f0db_fk_Asset_id">
       <ColNames>asset_obj_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="330" parent="250" name="AssetRecord_creator_id_8a54867d_fk_UserProfile_id">
+    <index id="329" parent="250" name="AssetRecord_creator_id_8a54867d_fk_UserProfile_id">
       <ColNames>creator_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="331" parent="250" name="PRIMARY">
+    <key id="330" parent="250" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="332" parent="250" name="AssetRecord_asset_obj_id_8724f0db_fk_Asset_id">
+    <foreign-key id="331" parent="250" name="AssetRecord_asset_obj_id_8724f0db_fk_Asset_id">
       <ColNames>asset_obj_id</ColNames>
       <RefSchemaName>cmdb_mha</RefSchemaName>
       <RefTableName>asset</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="333" parent="250" name="AssetRecord_creator_id_8a54867d_fk_UserProfile_id">
+    <foreign-key id="332" parent="250" name="AssetRecord_creator_id_8a54867d_fk_UserProfile_id">
       <ColNames>creator_id</ColNames>
       <RefSchemaName>cmdb_mha</RefSchemaName>
       <RefTableName>userprofile</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="334" parent="251" name="id">
+    <column id="333" parent="251" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="335" parent="251" name="name">
+    <column id="334" parent="251" name="name">
       <Position>2</Position>
       <DataType>varchar(150)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="336" parent="251" name="name">
+    <index id="335" parent="251" name="name">
       <ColNames>name</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="337" parent="251" name="PRIMARY">
+    <key id="336" parent="251" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="338" parent="251" name="name">
+    <key id="337" parent="251" name="name">
       <ColNames>name</ColNames>
       <UnderlyingIndexName>name</UnderlyingIndexName>
     </key>
-    <column id="339" parent="252" name="id">
+    <column id="338" parent="252" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="340" parent="252" name="group_id">
+    <column id="339" parent="252" name="group_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="341" parent="252" name="permission_id">
+    <column id="340" parent="252" name="permission_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="342" parent="252" name="auth_group_permissions_group_id_permission_id_0cd325b0_uniq">
+    <index id="341" parent="252" name="auth_group_permissions_group_id_permission_id_0cd325b0_uniq">
       <ColNames>group_id
 permission_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="343" parent="252" name="auth_group_permissio_permission_id_84c5c92e_fk_auth_perm">
+    <index id="342" parent="252" name="auth_group_permissio_permission_id_84c5c92e_fk_auth_perm">
       <ColNames>permission_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="344" parent="252" name="PRIMARY">
+    <key id="343" parent="252" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="345" parent="252" name="auth_group_permissions_group_id_permission_id_0cd325b0_uniq">
+    <key id="344" parent="252" name="auth_group_permissions_group_id_permission_id_0cd325b0_uniq">
       <ColNames>group_id
 permission_id</ColNames>
       <UnderlyingIndexName>auth_group_permissions_group_id_permission_id_0cd325b0_uniq</UnderlyingIndexName>
     </key>
-    <foreign-key id="346" parent="252" name="auth_group_permissions_group_id_b120cbf9_fk_auth_group_id">
+    <foreign-key id="345" parent="252" name="auth_group_permissions_group_id_b120cbf9_fk_auth_group_id">
       <ColNames>group_id</ColNames>
       <RefSchemaName>cmdb_mha</RefSchemaName>
       <RefTableName>auth_group</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="347" parent="252" name="auth_group_permissio_permission_id_84c5c92e_fk_auth_perm">
+    <foreign-key id="346" parent="252" name="auth_group_permissio_permission_id_84c5c92e_fk_auth_perm">
       <ColNames>permission_id</ColNames>
       <RefSchemaName>cmdb_mha</RefSchemaName>
       <RefTableName>auth_permission</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="348" parent="253" name="id">
+    <column id="347" parent="253" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="349" parent="253" name="name">
+    <column id="348" parent="253" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="350" parent="253" name="content_type_id">
+    <column id="349" parent="253" name="content_type_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="351" parent="253" name="codename">
+    <column id="350" parent="253" name="codename">
       <Position>4</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="352" parent="253" name="auth_permission_content_type_id_codename_01ab375a_uniq">
+    <index id="351" parent="253" name="auth_permission_content_type_id_codename_01ab375a_uniq">
       <ColNames>content_type_id
 codename</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="353" parent="253" name="PRIMARY">
+    <key id="352" parent="253" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="354" parent="253" name="auth_permission_content_type_id_codename_01ab375a_uniq">
+    <key id="353" parent="253" name="auth_permission_content_type_id_codename_01ab375a_uniq">
       <ColNames>content_type_id
 codename</ColNames>
       <UnderlyingIndexName>auth_permission_content_type_id_codename_01ab375a_uniq</UnderlyingIndexName>
     </key>
-    <foreign-key id="355" parent="253" name="auth_permission_content_type_id_2f476e4b_fk_django_co">
+    <foreign-key id="354" parent="253" name="auth_permission_content_type_id_2f476e4b_fk_django_co">
       <ColNames>content_type_id</ColNames>
       <RefSchemaName>cmdb_mha</RefSchemaName>
       <RefTableName>django_content_type</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="356" parent="254" name="id">
+    <column id="355" parent="254" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="357" parent="254" name="db_ip">
+    <column id="356" parent="254" name="db_ip">
       <Position>2</Position>
       <DataType>char(39)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="358" parent="254" name="port">
+    <column id="357" parent="254" name="port">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="359" parent="254" name="db_name">
+    <column id="358" parent="254" name="db_name">
       <Position>4</Position>
       <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="360" parent="254" name="backup_host">
+    <column id="359" parent="254" name="backup_host">
       <Position>5</Position>
       <DataType>char(39)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="361" parent="254" name="backup_dir">
+    <column id="360" parent="254" name="backup_dir">
       <Position>6</Position>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="362" parent="254" name="create_time">
+    <column id="361" parent="254" name="create_time">
       <Position>7</Position>
       <DataType>datetime(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="363" parent="254" name="backup_time">
+    <column id="362" parent="254" name="backup_time">
       <Position>8</Position>
       <DataType>datetime(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="364" parent="254" name="BackupInfo_db_name_db_ip_port_44f3aa4c_uniq">
+    <index id="363" parent="254" name="BackupInfo_db_name_db_ip_port_44f3aa4c_uniq">
       <ColNames>db_name
 db_ip
 port</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="365" parent="254" name="PRIMARY">
+    <key id="364" parent="254" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="366" parent="254" name="BackupInfo_db_name_db_ip_port_44f3aa4c_uniq">
+    <key id="365" parent="254" name="BackupInfo_db_name_db_ip_port_44f3aa4c_uniq">
       <ColNames>db_name
 db_ip
 port</ColNames>
       <UnderlyingIndexName>BackupInfo_db_name_db_ip_port_44f3aa4c_uniq</UnderlyingIndexName>
     </key>
-    <column id="367" parent="255" name="id">
+    <column id="366" parent="255" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="368" parent="255" name="name">
+    <column id="367" parent="255" name="name">
       <Position>2</Position>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="369" parent="255" name="contact_id">
+    <column id="368" parent="255" name="contact_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="370" parent="255" name="manager_id">
+    <column id="369" parent="255" name="manager_id">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="371" parent="255" name="name">
+    <index id="370" parent="255" name="name">
       <ColNames>name</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="372" parent="255" name="BusinessUnit_contact_id_03c2f8fe_fk_UserGroup_id">
+    <index id="371" parent="255" name="BusinessUnit_contact_id_03c2f8fe_fk_UserGroup_id">
       <ColNames>contact_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="373" parent="255" name="BusinessUnit_manager_id_b2d81a3b_fk_UserGroup_id">
+    <index id="372" parent="255" name="BusinessUnit_manager_id_b2d81a3b_fk_UserGroup_id">
       <ColNames>manager_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="374" parent="255" name="PRIMARY">
+    <key id="373" parent="255" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="375" parent="255" name="name">
+    <key id="374" parent="255" name="name">
       <ColNames>name</ColNames>
       <UnderlyingIndexName>name</UnderlyingIndexName>
     </key>
-    <foreign-key id="376" parent="255" name="BusinessUnit_contact_id_03c2f8fe_fk_UserGroup_id">
+    <foreign-key id="375" parent="255" name="BusinessUnit_contact_id_03c2f8fe_fk_UserGroup_id">
       <ColNames>contact_id</ColNames>
       <RefSchemaName>cmdb_mha</RefSchemaName>
       <RefTableName>usergroup</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="377" parent="255" name="BusinessUnit_manager_id_b2d81a3b_fk_UserGroup_id">
+    <foreign-key id="376" parent="255" name="BusinessUnit_manager_id_b2d81a3b_fk_UserGroup_id">
       <ColNames>manager_id</ColNames>
       <RefSchemaName>cmdb_mha</RefSchemaName>
       <RefTableName>usergroup</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="378" parent="256" name="id">
+    <column id="377" parent="256" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="379" parent="256" name="db_ip">
+    <column id="378" parent="256" name="db_ip">
       <Position>2</Position>
       <DataType>char(39)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="380" parent="256" name="port">
+    <column id="379" parent="256" name="port">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="381" parent="256" name="IN_BP">
+    <column id="380" parent="256" name="IN_BP">
       <Position>4</Position>
       <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="382" parent="256" name="db_space">
+    <column id="381" parent="256" name="db_space">
       <Position>5</Position>
       <DataType>varchar(16)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="383" parent="256" name="db_username">
+    <column id="382" parent="256" name="db_name">
       <Position>6</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="384" parent="256" name="max_tablename">
+    <column id="383" parent="256" name="max_tablename">
       <Position>7</Position>
       <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="385" parent="256" name="max_tablespace">
+    <column id="384" parent="256" name="max_tablespace">
       <Position>8</Position>
       <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="386" parent="256" name="total_data_free">
+    <column id="385" parent="256" name="total_data_free">
       <Position>9</Position>
       <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="387" parent="256" name="create_time">
+    <column id="386" parent="256" name="create_time">
       <Position>10</Position>
       <DataType>datetime(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="388" parent="256" name="DatabaseInfo_max_tablename_db_username_db_ip_port_663519c4_uniq">
+    <column id="387" parent="256" name="hostname">
+      <Position>11</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="388" parent="256" name="role">
+      <Position>12</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="389" parent="256" name="version">
+      <Position>13</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="390" parent="256" name="DatabaseInfo_max_tablename_db_username_db_ip_port_663519c4_uniq">
       <ColNames>max_tablename
-db_username
+db_name
 db_ip
 port</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="389" parent="256" name="PRIMARY">
+    <key id="391" parent="256" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="390" parent="256" name="DatabaseInfo_max_tablename_db_username_db_ip_port_663519c4_uniq">
+    <key id="392" parent="256" name="DatabaseInfo_max_tablename_db_username_db_ip_port_663519c4_uniq">
       <ColNames>max_tablename
-db_username
+db_name
 db_ip
 port</ColNames>
       <UnderlyingIndexName>DatabaseInfo_max_tablename_db_username_db_ip_port_663519c4_uniq</UnderlyingIndexName>
     </key>
-    <column id="391" parent="257" name="id">
+    <column id="393" parent="257" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="392" parent="257" name="host_ip">
+    <column id="394" parent="257" name="host_ip">
       <Position>2</Position>
       <DataType>char(39)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="393" parent="257" name="database_ip">
+    <column id="395" parent="257" name="database_ip">
       <Position>3</Position>
       <DataType>char(39)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="394" parent="257" name="port">
+    <column id="396" parent="257" name="port">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="395" parent="257" name="request_user">
+    <column id="397" parent="257" name="request_user">
       <Position>5</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="396" parent="257" name="operation_user">
+    <column id="398" parent="257" name="operation_user">
       <Position>6</Position>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="397" parent="257" name="db_username">
+    <column id="399" parent="257" name="db_username">
       <Position>7</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="398" parent="257" name="db_password">
+    <column id="400" parent="257" name="db_password">
       <Position>8</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="399" parent="257" name="status">
+    <column id="401" parent="257" name="status">
       <Position>9</Position>
       <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="400" parent="257" name="description">
+    <column id="402" parent="257" name="description">
       <Position>10</Position>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="401" parent="257" name="db_permission">
+    <column id="403" parent="257" name="db_permission">
       <Position>11</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="402" parent="257" name="db_name">
+    <column id="404" parent="257" name="db_name">
       <Position>12</Position>
       <DataType>varchar(60)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="403" parent="257" name="create_time">
+    <column id="405" parent="257" name="create_time">
       <Position>13</Position>
       <DataType>datetime(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="404" parent="257" name="judge_time">
+    <column id="406" parent="257" name="judge_time">
       <Position>14</Position>
       <DataType>datetime(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="405" parent="257" name="DBGrantHistory_database_ip_db_username__5e1e496f_uniq">
+    <index id="407" parent="257" name="DBGrantHistory_database_ip_db_username__5e1e496f_uniq">
       <ColNames>database_ip
 db_username
 port
@@ -1734,12 +1751,12 @@ host_ip</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="406" parent="257" name="PRIMARY">
+    <key id="408" parent="257" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="407" parent="257" name="DBGrantHistory_database_ip_db_username__5e1e496f_uniq">
+    <key id="409" parent="257" name="DBGrantHistory_database_ip_db_username__5e1e496f_uniq">
       <ColNames>database_ip
 db_username
 port
@@ -1747,434 +1764,439 @@ db_permission
 host_ip</ColNames>
       <UnderlyingIndexName>DBGrantHistory_database_ip_db_username__5e1e496f_uniq</UnderlyingIndexName>
     </key>
-    <column id="408" parent="258" name="id">
+    <column id="410" parent="258" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="409" parent="258" name="slot">
+    <column id="411" parent="258" name="slot">
       <Position>2</Position>
       <DataType>varchar(8)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="410" parent="258" name="model">
+    <column id="412" parent="258" name="model">
       <Position>3</Position>
       <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="411" parent="258" name="capacity">
+    <column id="413" parent="258" name="capacity">
       <Position>4</Position>
       <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="412" parent="258" name="pd_type">
+    <column id="414" parent="258" name="pd_type">
       <Position>5</Position>
       <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="413" parent="258" name="server_obj_id">
+    <column id="415" parent="258" name="server_obj_id">
       <Position>6</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="414" parent="258" name="Disk_server_obj_id_2d04bbe0_fk_Server_id">
+    <index id="416" parent="258" name="Disk_server_obj_id_2d04bbe0_fk_Server_id">
       <ColNames>server_obj_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="415" parent="258" name="PRIMARY">
+    <key id="417" parent="258" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="416" parent="258" name="Disk_server_obj_id_2d04bbe0_fk_Server_id">
+    <foreign-key id="418" parent="258" name="Disk_server_obj_id_2d04bbe0_fk_Server_id">
       <ColNames>server_obj_id</ColNames>
       <RefSchemaName>cmdb_mha</RefSchemaName>
       <RefTableName>server</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="417" parent="259" name="id">
+    <column id="419" parent="259" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="418" parent="259" name="action_time">
+    <column id="420" parent="259" name="action_time">
       <Position>2</Position>
       <DataType>datetime(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="419" parent="259" name="object_id">
+    <column id="421" parent="259" name="object_id">
       <Position>3</Position>
       <DataType>longtext|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="420" parent="259" name="object_repr">
+    <column id="422" parent="259" name="object_repr">
       <Position>4</Position>
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="421" parent="259" name="action_flag">
+    <column id="423" parent="259" name="action_flag">
       <Position>5</Position>
       <DataType>smallint(5) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="422" parent="259" name="change_message">
+    <column id="424" parent="259" name="change_message">
       <Position>6</Position>
       <DataType>longtext|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="423" parent="259" name="content_type_id">
+    <column id="425" parent="259" name="content_type_id">
       <Position>7</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="424" parent="259" name="user_id">
+    <column id="426" parent="259" name="user_id">
       <Position>8</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="425" parent="259" name="django_admin_log_content_type_id_c4bce8eb_fk_django_co">
+    <index id="427" parent="259" name="django_admin_log_content_type_id_c4bce8eb_fk_django_co">
       <ColNames>content_type_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="426" parent="259" name="django_admin_log_user_id_c564eba6_fk_UserProfile_id">
+    <index id="428" parent="259" name="django_admin_log_user_id_c564eba6_fk_UserProfile_id">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="427" parent="259" name="PRIMARY">
+    <key id="429" parent="259" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="428" parent="259" name="django_admin_log_content_type_id_c4bce8eb_fk_django_co">
+    <foreign-key id="430" parent="259" name="django_admin_log_content_type_id_c4bce8eb_fk_django_co">
       <ColNames>content_type_id</ColNames>
       <RefSchemaName>cmdb_mha</RefSchemaName>
       <RefTableName>django_content_type</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="429" parent="259" name="django_admin_log_user_id_c564eba6_fk_UserProfile_id">
+    <foreign-key id="431" parent="259" name="django_admin_log_user_id_c564eba6_fk_UserProfile_id">
       <ColNames>user_id</ColNames>
       <RefSchemaName>cmdb_mha</RefSchemaName>
       <RefTableName>userprofile</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="430" parent="260" name="id">
+    <column id="432" parent="260" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="431" parent="260" name="app_label">
+    <column id="433" parent="260" name="app_label">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="432" parent="260" name="model">
+    <column id="434" parent="260" name="model">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="433" parent="260" name="django_content_type_app_label_model_76bd3d3b_uniq">
+    <index id="435" parent="260" name="django_content_type_app_label_model_76bd3d3b_uniq">
       <ColNames>app_label
 model</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="434" parent="260" name="PRIMARY">
+    <key id="436" parent="260" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="435" parent="260" name="django_content_type_app_label_model_76bd3d3b_uniq">
+    <key id="437" parent="260" name="django_content_type_app_label_model_76bd3d3b_uniq">
       <ColNames>app_label
 model</ColNames>
       <UnderlyingIndexName>django_content_type_app_label_model_76bd3d3b_uniq</UnderlyingIndexName>
     </key>
-    <column id="436" parent="261" name="id">
+    <column id="438" parent="261" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="437" parent="261" name="app">
+    <column id="439" parent="261" name="app">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="438" parent="261" name="name">
+    <column id="440" parent="261" name="name">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="439" parent="261" name="applied">
+    <column id="441" parent="261" name="applied">
       <Position>4</Position>
       <DataType>datetime(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="440" parent="261" name="PRIMARY">
+    <key id="442" parent="261" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="441" parent="262" name="session_key">
+    <column id="443" parent="262" name="session_key">
       <Position>1</Position>
       <DataType>varchar(40)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="442" parent="262" name="session_data">
+    <column id="444" parent="262" name="session_data">
       <Position>2</Position>
       <DataType>longtext|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="443" parent="262" name="expire_date">
+    <column id="445" parent="262" name="expire_date">
       <Position>3</Position>
       <DataType>datetime(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="444" parent="262" name="django_session_expire_date_a5c62663">
+    <index id="446" parent="262" name="django_session_expire_date_a5c62663">
       <ColNames>expire_date</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="445" parent="262" name="PRIMARY">
+    <key id="447" parent="262" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>session_key</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="446" parent="263" name="id">
+    <column id="448" parent="263" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="447" parent="263" name="title">
+    <column id="449" parent="263" name="title">
       <Position>2</Position>
       <DataType>varchar(16)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="448" parent="263" name="content">
+    <column id="450" parent="263" name="content">
       <Position>3</Position>
       <DataType>longtext|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="449" parent="263" name="create_at">
+    <column id="451" parent="263" name="create_at">
       <Position>4</Position>
       <DataType>datetime(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="450" parent="263" name="asset_obj_id">
+    <column id="452" parent="263" name="asset_obj_id">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="451" parent="263" name="ErrorLog_asset_obj_id_d1a85580_fk_Asset_id">
+    <index id="453" parent="263" name="ErrorLog_asset_obj_id_d1a85580_fk_Asset_id">
       <ColNames>asset_obj_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="452" parent="263" name="PRIMARY">
+    <key id="454" parent="263" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="453" parent="263" name="ErrorLog_asset_obj_id_d1a85580_fk_Asset_id">
+    <foreign-key id="455" parent="263" name="ErrorLog_asset_obj_id_d1a85580_fk_Asset_id">
       <ColNames>asset_obj_id</ColNames>
       <RefSchemaName>cmdb_mha</RefSchemaName>
       <RefTableName>asset</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="454" parent="264" name="id">
+    <column id="456" parent="264" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="455" parent="264" name="name">
+    <column id="457" parent="264" name="name">
       <Position>2</Position>
       <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="456" parent="264" name="floor">
+    <column id="458" parent="264" name="floor">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="457" parent="264" name="PRIMARY">
+    <key id="459" parent="264" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="458" parent="265" name="id">
+    <column id="460" parent="265" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="459" parent="265" name="slot">
+    <column id="461" parent="265" name="slot">
       <Position>2</Position>
       <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="460" parent="265" name="manufacturer">
+    <column id="462" parent="265" name="manufacturer">
       <Position>3</Position>
       <DataType>varchar(32)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="461" parent="265" name="model">
+    <column id="463" parent="265" name="model">
       <Position>4</Position>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="462" parent="265" name="capacity">
+    <column id="464" parent="265" name="capacity">
       <Position>5</Position>
       <DataType>double|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="463" parent="265" name="sn">
+    <column id="465" parent="265" name="sn">
       <Position>6</Position>
       <DataType>varchar(64)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="464" parent="265" name="speed">
+    <column id="466" parent="265" name="speed">
       <Position>7</Position>
       <DataType>varchar(16)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="465" parent="265" name="server_obj_id">
+    <column id="467" parent="265" name="server_obj_id">
       <Position>8</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="466" parent="265" name="Memory_server_obj_id_675280d2_fk_Server_id">
+    <index id="468" parent="265" name="Memory_server_obj_id_675280d2_fk_Server_id">
       <ColNames>server_obj_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="467" parent="265" name="PRIMARY">
+    <key id="469" parent="265" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="468" parent="265" name="Memory_server_obj_id_675280d2_fk_Server_id">
+    <foreign-key id="470" parent="265" name="Memory_server_obj_id_675280d2_fk_Server_id">
       <ColNames>server_obj_id</ColNames>
       <RefSchemaName>cmdb_mha</RefSchemaName>
       <RefTableName>server</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="469" parent="266" name="id">
+    <column id="471" parent="266" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="470" parent="266" name="db_name">
+    <column id="472" parent="266" name="db_name">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="471" parent="266" name="role">
+    <column id="473" parent="266" name="role">
       <Position>3</Position>
       <DataType>varchar(15)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="472" parent="266" name="hostname">
+    <column id="474" parent="266" name="hostname">
       <Position>4</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="473" parent="266" name="ip">
+    <column id="475" parent="266" name="ip">
       <Position>5</Position>
       <DataType>char(39)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="474" parent="266" name="service_name">
+    <column id="476" parent="266" name="service_name">
       <Position>6</Position>
       <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="475" parent="266" name="port">
+    <column id="477" parent="266" name="port">
       <Position>7</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="476" parent="266" name="description">
+    <column id="478" parent="266" name="description">
       <Position>8</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="477" parent="266" name="root_pass">
+    <column id="479" parent="266" name="root_pass">
       <Position>9</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="478" parent="266" name="backup_ip">
+    <column id="480" parent="266" name="backup_ip">
       <Position>10</Position>
       <DataType>char(39)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="479" parent="266" name="archive_ip">
+    <column id="481" parent="266" name="archive_ip">
       <Position>11</Position>
       <DataType>char(39)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="480" parent="266" name="version">
+    <column id="482" parent="266" name="version">
       <Position>12</Position>
       <DataType>varchar(15)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="481" parent="266" name="search_flag">
+    <column id="483" parent="266" name="search_flag">
       <Position>13</Position>
       <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="482" parent="266" name="realm_name">
+    <column id="484" parent="266" name="realm_name">
       <Position>14</Position>
       <DataType>varchar(256)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="483" parent="266" name="MysqlInfo_ip_hostname_port_db_name_role_0fa664ea_uniq">
+    <column id="485" parent="266" name="master_ip">
+      <Position>15</Position>
+      <DataType>char(39)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="486" parent="266" name="MysqlInfo_ip_hostname_port_db_name_role_0fa664ea_uniq">
       <ColNames>ip
 hostname
 port
@@ -2183,12 +2205,12 @@ role</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="484" parent="266" name="PRIMARY">
+    <key id="487" parent="266" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="485" parent="266" name="MysqlInfo_ip_hostname_port_db_name_role_0fa664ea_uniq">
+    <key id="488" parent="266" name="MysqlInfo_ip_hostname_port_db_name_role_0fa664ea_uniq">
       <ColNames>ip
 hostname
 port
@@ -2196,493 +2218,473 @@ db_name
 role</ColNames>
       <UnderlyingIndexName>MysqlInfo_ip_hostname_port_db_name_role_0fa664ea_uniq</UnderlyingIndexName>
     </key>
-    <column id="486" parent="267" name="id">
+    <column id="489" parent="267" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="487" parent="267" name="server_ip">
-      <Position>2</Position>
-      <DataType>char(39)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="488" parent="267" name="hostname">
-      <Position>3</Position>
-      <DataType>varchar(30)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="489" parent="267" name="user">
-      <Position>4</Position>
-      <DataType>varchar(30)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="490" parent="267" name="status">
-      <Position>5</Position>
-      <DataType>varchar(10)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="491" parent="267" name="version">
-      <Position>6</Position>
-      <DataType>varchar(10)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="492" parent="267" name="create_time">
-      <Position>7</Position>
-      <DataType>datetime(6)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="493" parent="267" name="change_time">
-      <Position>8</Position>
-      <DataType>datetime(6)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="494" parent="267" name="app_name">
-      <Position>9</Position>
-      <DataType>varchar(20)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="495" parent="267" name="MysqlInitInfo_app_name_server_ip_2ec04d98_uniq">
-      <ColNames>app_name
-server_ip</ColNames>
-      <Unique>1</Unique>
-      <Type>btree</Type>
-    </index>
-    <key id="496" parent="267" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <key id="497" parent="267" name="MysqlInitInfo_app_name_server_ip_2ec04d98_uniq">
-      <ColNames>app_name
-server_ip</ColNames>
-      <UnderlyingIndexName>MysqlInitInfo_app_name_server_ip_2ec04d98_uniq</UnderlyingIndexName>
-    </key>
-    <column id="498" parent="268" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="499" parent="268" name="management_ip">
+    <column id="490" parent="267" name="management_ip">
       <Position>2</Position>
       <DataType>varchar(64)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="500" parent="268" name="vlan_ip">
+    <column id="491" parent="267" name="vlan_ip">
       <Position>3</Position>
       <DataType>varchar(64)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="501" parent="268" name="intranet_ip">
+    <column id="492" parent="267" name="intranet_ip">
       <Position>4</Position>
       <DataType>varchar(128)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="502" parent="268" name="sn">
+    <column id="493" parent="267" name="sn">
       <Position>5</Position>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="503" parent="268" name="manufacture">
+    <column id="494" parent="267" name="manufacture">
       <Position>6</Position>
       <DataType>varchar(128)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="504" parent="268" name="model">
+    <column id="495" parent="267" name="model">
       <Position>7</Position>
       <DataType>varchar(128)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="505" parent="268" name="port_num">
+    <column id="496" parent="267" name="port_num">
       <Position>8</Position>
       <DataType>smallint(6)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="506" parent="268" name="device_detail">
+    <column id="497" parent="267" name="device_detail">
       <Position>9</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="507" parent="268" name="asset_id">
+    <column id="498" parent="267" name="asset_id">
       <Position>10</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="508" parent="268" name="sn">
+    <index id="499" parent="267" name="sn">
       <ColNames>sn</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="509" parent="268" name="asset_id">
+    <index id="500" parent="267" name="asset_id">
       <ColNames>asset_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="510" parent="268" name="PRIMARY">
+    <key id="501" parent="267" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="511" parent="268" name="sn">
+    <key id="502" parent="267" name="sn">
       <ColNames>sn</ColNames>
       <UnderlyingIndexName>sn</UnderlyingIndexName>
     </key>
-    <key id="512" parent="268" name="asset_id">
+    <key id="503" parent="267" name="asset_id">
       <ColNames>asset_id</ColNames>
       <UnderlyingIndexName>asset_id</UnderlyingIndexName>
     </key>
-    <foreign-key id="513" parent="268" name="NetworkDevice_asset_id_dbecb57a_fk_Asset_id">
+    <foreign-key id="504" parent="267" name="NetworkDevice_asset_id_dbecb57a_fk_Asset_id">
       <ColNames>asset_id</ColNames>
       <RefSchemaName>cmdb_mha</RefSchemaName>
       <RefTableName>asset</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="514" parent="269" name="id">
+    <column id="505" parent="268" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="515" parent="269" name="name">
+    <column id="506" parent="268" name="name">
       <Position>2</Position>
       <DataType>varchar(128)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="516" parent="269" name="hwaddr">
+    <column id="507" parent="268" name="hwaddr">
       <Position>3</Position>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="517" parent="269" name="netmask">
+    <column id="508" parent="268" name="netmask">
       <Position>4</Position>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="518" parent="269" name="ipaddrs">
+    <column id="509" parent="268" name="ipaddrs">
       <Position>5</Position>
       <DataType>varchar(256)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="519" parent="269" name="up">
+    <column id="510" parent="268" name="up">
       <Position>6</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="520" parent="269" name="server_obj_id">
+    <column id="511" parent="268" name="server_obj_id">
       <Position>7</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="521" parent="269" name="NIC_server_obj_id_ce367217_fk_Server_id">
+    <index id="512" parent="268" name="NIC_server_obj_id_ce367217_fk_Server_id">
       <ColNames>server_obj_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="522" parent="269" name="PRIMARY">
+    <key id="513" parent="268" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="523" parent="269" name="NIC_server_obj_id_ce367217_fk_Server_id">
+    <foreign-key id="514" parent="268" name="NIC_server_obj_id_ce367217_fk_Server_id">
       <ColNames>server_obj_id</ColNames>
       <RefSchemaName>cmdb_mha</RefSchemaName>
       <RefTableName>server</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="524" parent="270" name="id">
+    <column id="515" parent="269" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="525" parent="270" name="db_id">
+    <column id="516" parent="269" name="db_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="526" parent="270" name="username">
+    <column id="517" parent="269" name="username">
       <Position>3</Position>
       <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="527" parent="270" name="option">
+    <column id="518" parent="269" name="option">
       <Position>4</Position>
       <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="528" parent="270" name="create_time">
+    <column id="519" parent="269" name="create_time">
       <Position>5</Position>
       <DataType>datetime(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="529" parent="270" name="status">
+    <column id="520" parent="269" name="status">
       <Position>6</Position>
       <DataType>varchar(16)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="530" parent="270" name="PRIMARY">
+    <key id="521" parent="269" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="531" parent="271" name="id">
+    <column id="522" parent="270" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="532" parent="271" name="master_ip">
+    <column id="523" parent="270" name="master_ip">
       <Position>2</Position>
       <DataType>char(39)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="533" parent="271" name="master_port">
+    <column id="524" parent="270" name="master_port">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="534" parent="271" name="master_dbname">
+    <column id="525" parent="270" name="master_dbname">
       <Position>4</Position>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="535" parent="271" name="role">
+    <column id="526" parent="270" name="role">
       <Position>5</Position>
       <DataType>varchar(16)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="536" parent="271" name="backup_list">
+    <column id="527" parent="270" name="backup_list">
       <Position>6</Position>
       <DataType>varchar(256)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="537" parent="271" name="slave_ip">
+    <column id="528" parent="270" name="slave_ip">
       <Position>7</Position>
       <DataType>char(39)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="538" parent="271" name="slave_port">
+    <column id="529" parent="270" name="slave_port">
       <Position>8</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="539" parent="271" name="slave_dbname">
+    <column id="530" parent="270" name="slave_dbname">
       <Position>9</Position>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="540" parent="271" name="create_time">
+    <column id="531" parent="270" name="create_time">
       <Position>10</Position>
       <DataType>datetime(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="541" parent="271" name="RestoreDB_master_ip_2d092595_uniq">
+    <index id="532" parent="270" name="RestoreDB_master_ip_2d092595_uniq">
       <ColNames>master_ip</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="542" parent="271" name="PRIMARY">
+    <key id="533" parent="270" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="543" parent="271" name="RestoreDB_master_ip_2d092595_uniq">
+    <key id="534" parent="270" name="RestoreDB_master_ip_2d092595_uniq">
       <ColNames>master_ip</ColNames>
       <UnderlyingIndexName>RestoreDB_master_ip_2d092595_uniq</UnderlyingIndexName>
     </key>
-    <column id="544" parent="272" name="id">
+    <column id="535" parent="271" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="545" parent="272" name="hostname">
+    <column id="536" parent="271" name="hostname">
       <Position>2</Position>
       <DataType>varchar(128)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="546" parent="272" name="sn">
+    <column id="537" parent="271" name="sn">
       <Position>3</Position>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="547" parent="272" name="manufacturer">
+    <column id="538" parent="271" name="manufacturer">
       <Position>4</Position>
       <DataType>varchar(64)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="548" parent="272" name="model">
+    <column id="539" parent="271" name="model">
       <Position>5</Position>
       <DataType>varchar(64)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="549" parent="272" name="manage_ip">
+    <column id="540" parent="271" name="manage_ip">
       <Position>6</Position>
       <DataType>char(39)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="550" parent="272" name="os_platform">
+    <column id="541" parent="271" name="os_platform">
       <Position>7</Position>
       <DataType>varchar(16)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="551" parent="272" name="os_version">
+    <column id="542" parent="271" name="os_version">
       <Position>8</Position>
       <DataType>varchar(16)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="552" parent="272" name="cpu_count">
+    <column id="543" parent="271" name="cpu_count">
       <Position>9</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="553" parent="272" name="cpu_physical_count">
+    <column id="544" parent="271" name="cpu_physical_count">
       <Position>10</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="554" parent="272" name="cpu_model">
+    <column id="545" parent="271" name="cpu_model">
       <Position>11</Position>
       <DataType>varchar(128)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="555" parent="272" name="create_at">
+    <column id="546" parent="271" name="create_at">
       <Position>12</Position>
       <DataType>datetime(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="556" parent="272" name="asset_id">
+    <column id="547" parent="271" name="asset_id">
       <Position>13</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="557" parent="272" name="hostname">
+    <index id="548" parent="271" name="hostname">
       <ColNames>hostname</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="558" parent="272" name="asset_id">
+    <index id="549" parent="271" name="asset_id">
       <ColNames>asset_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="559" parent="272" name="Server_sn_57ec7d9d">
+    <index id="550" parent="271" name="Server_sn_57ec7d9d">
       <ColNames>sn</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="560" parent="272" name="PRIMARY">
+    <key id="551" parent="271" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="561" parent="272" name="hostname">
+    <key id="552" parent="271" name="hostname">
       <ColNames>hostname</ColNames>
       <UnderlyingIndexName>hostname</UnderlyingIndexName>
     </key>
-    <key id="562" parent="272" name="asset_id">
+    <key id="553" parent="271" name="asset_id">
       <ColNames>asset_id</ColNames>
       <UnderlyingIndexName>asset_id</UnderlyingIndexName>
     </key>
-    <foreign-key id="563" parent="272" name="Server_asset_id_7bcd9958_fk_Asset_id">
+    <foreign-key id="554" parent="271" name="Server_asset_id_7bcd9958_fk_Asset_id">
       <ColNames>asset_id</ColNames>
       <RefSchemaName>cmdb_mha</RefSchemaName>
       <RefTableName>asset</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="564" parent="273" name="id">
+    <column id="555" parent="272" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="565" parent="273" name="name">
+    <column id="556" parent="272" name="name">
       <Position>2</Position>
       <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="566" parent="273" name="name">
+    <index id="557" parent="272" name="name">
       <ColNames>name</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="567" parent="273" name="PRIMARY">
+    <key id="558" parent="272" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="568" parent="273" name="name">
+    <key id="559" parent="272" name="name">
       <ColNames>name</ColNames>
       <UnderlyingIndexName>name</UnderlyingIndexName>
     </key>
-    <column id="569" parent="274" name="id">
+    <column id="560" parent="273" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="570" parent="274" name="name">
+    <column id="561" parent="273" name="name">
       <Position>2</Position>
       <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="571" parent="274" name="name">
+    <index id="562" parent="273" name="name">
       <ColNames>name</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="572" parent="274" name="PRIMARY">
+    <key id="563" parent="273" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="573" parent="274" name="name">
+    <key id="564" parent="273" name="name">
       <ColNames>name</ColNames>
       <UnderlyingIndexName>name</UnderlyingIndexName>
     </key>
+    <column id="565" parent="274" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="566" parent="274" name="usergroup_id">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="567" parent="274" name="userprofile_id">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="568" parent="274" name="UserGroup_users_usergroup_id_userprofile_id_6beebfe8_uniq">
+      <ColNames>usergroup_id
+userprofile_id</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="569" parent="274" name="UserGroup_users_userprofile_id_2b6c39f6_fk_UserProfile_id">
+      <ColNames>userprofile_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="570" parent="274" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="571" parent="274" name="UserGroup_users_usergroup_id_userprofile_id_6beebfe8_uniq">
+      <ColNames>usergroup_id
+userprofile_id</ColNames>
+      <UnderlyingIndexName>UserGroup_users_usergroup_id_userprofile_id_6beebfe8_uniq</UnderlyingIndexName>
+    </key>
+    <foreign-key id="572" parent="274" name="UserGroup_users_usergroup_id_e8286e4d_fk_UserGroup_id">
+      <ColNames>usergroup_id</ColNames>
+      <RefSchemaName>cmdb_mha</RefSchemaName>
+      <RefTableName>usergroup</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="573" parent="274" name="UserGroup_users_userprofile_id_2b6c39f6_fk_UserProfile_id">
+      <ColNames>userprofile_id</ColNames>
+      <RefSchemaName>cmdb_mha</RefSchemaName>
+      <RefTableName>userprofile</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
     <column id="574" parent="275" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
@@ -2690,151 +2692,151 @@ server_ip</ColNames>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="575" parent="275" name="usergroup_id">
+    <column id="575" parent="275" name="password">
       <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>varchar(128)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="576" parent="275" name="userprofile_id">
+    <column id="576" parent="275" name="last_login">
       <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>datetime(6)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="577" parent="275" name="is_superuser">
+      <Position>4</Position>
+      <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="577" parent="275" name="UserGroup_users_usergroup_id_userprofile_id_6beebfe8_uniq">
-      <ColNames>usergroup_id
-userprofile_id</ColNames>
+    <column id="578" parent="275" name="username">
+      <Position>5</Position>
+      <DataType>varchar(150)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="579" parent="275" name="first_name">
+      <Position>6</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="580" parent="275" name="last_name">
+      <Position>7</Position>
+      <DataType>varchar(150)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="581" parent="275" name="is_staff">
+      <Position>8</Position>
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="582" parent="275" name="is_active">
+      <Position>9</Position>
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="583" parent="275" name="date_joined">
+      <Position>10</Position>
+      <DataType>datetime(6)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="584" parent="275" name="phone">
+      <Position>11</Position>
+      <DataType>varchar(32)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="585" parent="275" name="email">
+      <Position>12</Position>
+      <DataType>varchar(254)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="586" parent="275" name="create_time">
+      <Position>13</Position>
+      <DataType>datetime(6)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="587" parent="275" name="username">
+      <ColNames>username</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="578" parent="275" name="UserGroup_users_userprofile_id_2b6c39f6_fk_UserProfile_id">
-      <ColNames>userprofile_id</ColNames>
+    <index id="588" parent="275" name="phone">
+      <ColNames>phone</ColNames>
+      <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="579" parent="275" name="PRIMARY">
+    <key id="589" parent="275" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="580" parent="275" name="UserGroup_users_usergroup_id_userprofile_id_6beebfe8_uniq">
-      <ColNames>usergroup_id
-userprofile_id</ColNames>
-      <UnderlyingIndexName>UserGroup_users_usergroup_id_userprofile_id_6beebfe8_uniq</UnderlyingIndexName>
+    <key id="590" parent="275" name="username">
+      <ColNames>username</ColNames>
+      <UnderlyingIndexName>username</UnderlyingIndexName>
     </key>
-    <foreign-key id="581" parent="275" name="UserGroup_users_usergroup_id_e8286e4d_fk_UserGroup_id">
-      <ColNames>usergroup_id</ColNames>
-      <RefSchemaName>cmdb_mha</RefSchemaName>
-      <RefTableName>usergroup</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="582" parent="275" name="UserGroup_users_userprofile_id_2b6c39f6_fk_UserProfile_id">
-      <ColNames>userprofile_id</ColNames>
-      <RefSchemaName>cmdb_mha</RefSchemaName>
-      <RefTableName>userprofile</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="583" parent="276" name="id">
+    <key id="591" parent="275" name="phone">
+      <ColNames>phone</ColNames>
+      <UnderlyingIndexName>phone</UnderlyingIndexName>
+    </key>
+    <column id="592" parent="276" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="584" parent="276" name="password">
+    <column id="593" parent="276" name="userprofile_id">
       <Position>2</Position>
-      <DataType>varchar(128)|0s</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="585" parent="276" name="last_login">
+    <column id="594" parent="276" name="group_id">
       <Position>3</Position>
-      <DataType>datetime(6)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="586" parent="276" name="is_superuser">
-      <Position>4</Position>
-      <DataType>tinyint(1)|0s</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="587" parent="276" name="username">
-      <Position>5</Position>
-      <DataType>varchar(150)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="588" parent="276" name="first_name">
-      <Position>6</Position>
-      <DataType>varchar(30)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="589" parent="276" name="last_name">
-      <Position>7</Position>
-      <DataType>varchar(150)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="590" parent="276" name="is_staff">
-      <Position>8</Position>
-      <DataType>tinyint(1)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="591" parent="276" name="is_active">
-      <Position>9</Position>
-      <DataType>tinyint(1)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="592" parent="276" name="date_joined">
-      <Position>10</Position>
-      <DataType>datetime(6)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="593" parent="276" name="phone">
-      <Position>11</Position>
-      <DataType>varchar(32)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="594" parent="276" name="email">
-      <Position>12</Position>
-      <DataType>varchar(254)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="595" parent="276" name="create_time">
-      <Position>13</Position>
-      <DataType>datetime(6)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="596" parent="276" name="username">
-      <ColNames>username</ColNames>
+    <index id="595" parent="276" name="UserProfile_groups_userprofile_id_group_id_0d7d3f81_uniq">
+      <ColNames>userprofile_id
+group_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="597" parent="276" name="phone">
-      <ColNames>phone</ColNames>
-      <Unique>1</Unique>
+    <index id="596" parent="276" name="UserProfile_groups_group_id_f9c774a4_fk_auth_group_id">
+      <ColNames>group_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="598" parent="276" name="PRIMARY">
+    <key id="597" parent="276" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="599" parent="276" name="username">
-      <ColNames>username</ColNames>
-      <UnderlyingIndexName>username</UnderlyingIndexName>
+    <key id="598" parent="276" name="UserProfile_groups_userprofile_id_group_id_0d7d3f81_uniq">
+      <ColNames>userprofile_id
+group_id</ColNames>
+      <UnderlyingIndexName>UserProfile_groups_userprofile_id_group_id_0d7d3f81_uniq</UnderlyingIndexName>
     </key>
-    <key id="600" parent="276" name="phone">
-      <ColNames>phone</ColNames>
-      <UnderlyingIndexName>phone</UnderlyingIndexName>
-    </key>
+    <foreign-key id="599" parent="276" name="UserProfile_groups_userprofile_id_a3b99491_fk_UserProfile_id">
+      <ColNames>userprofile_id</ColNames>
+      <RefSchemaName>cmdb_mha</RefSchemaName>
+      <RefTableName>userprofile</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="600" parent="276" name="UserProfile_groups_group_id_f9c774a4_fk_auth_group_id">
+      <ColNames>group_id</ColNames>
+      <RefSchemaName>cmdb_mha</RefSchemaName>
+      <RefTableName>auth_group</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
     <column id="601" parent="277" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
@@ -2848,20 +2850,20 @@ userprofile_id</ColNames>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="603" parent="277" name="group_id">
+    <column id="603" parent="277" name="permission_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="604" parent="277" name="UserProfile_groups_userprofile_id_group_id_0d7d3f81_uniq">
+    <index id="604" parent="277" name="UserProfile_user_permiss_userprofile_id_permissio_57fce408_uniq">
       <ColNames>userprofile_id
-group_id</ColNames>
+permission_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="605" parent="277" name="UserProfile_groups_group_id_f9c774a4_fk_auth_group_id">
-      <ColNames>group_id</ColNames>
+    <index id="605" parent="277" name="UserProfile_user_per_permission_id_fcca642d_fk_auth_perm">
+      <ColNames>permission_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="606" parent="277" name="PRIMARY">
@@ -2869,69 +2871,18 @@ group_id</ColNames>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="607" parent="277" name="UserProfile_groups_userprofile_id_group_id_0d7d3f81_uniq">
-      <ColNames>userprofile_id
-group_id</ColNames>
-      <UnderlyingIndexName>UserProfile_groups_userprofile_id_group_id_0d7d3f81_uniq</UnderlyingIndexName>
-    </key>
-    <foreign-key id="608" parent="277" name="UserProfile_groups_userprofile_id_a3b99491_fk_UserProfile_id">
-      <ColNames>userprofile_id</ColNames>
-      <RefSchemaName>cmdb_mha</RefSchemaName>
-      <RefTableName>userprofile</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="609" parent="277" name="UserProfile_groups_group_id_f9c774a4_fk_auth_group_id">
-      <ColNames>group_id</ColNames>
-      <RefSchemaName>cmdb_mha</RefSchemaName>
-      <RefTableName>auth_group</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="610" parent="278" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="611" parent="278" name="userprofile_id">
-      <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="612" parent="278" name="permission_id">
-      <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="613" parent="278" name="UserProfile_user_permiss_userprofile_id_permissio_57fce408_uniq">
-      <ColNames>userprofile_id
-permission_id</ColNames>
-      <Unique>1</Unique>
-      <Type>btree</Type>
-    </index>
-    <index id="614" parent="278" name="UserProfile_user_per_permission_id_fcca642d_fk_auth_perm">
-      <ColNames>permission_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="615" parent="278" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <key id="616" parent="278" name="UserProfile_user_permiss_userprofile_id_permissio_57fce408_uniq">
+    <key id="607" parent="277" name="UserProfile_user_permiss_userprofile_id_permissio_57fce408_uniq">
       <ColNames>userprofile_id
 permission_id</ColNames>
       <UnderlyingIndexName>UserProfile_user_permiss_userprofile_id_permissio_57fce408_uniq</UnderlyingIndexName>
     </key>
-    <foreign-key id="617" parent="278" name="UserProfile_user_per_userprofile_id_8fc2aee2_fk_UserProfi">
+    <foreign-key id="608" parent="277" name="UserProfile_user_per_userprofile_id_8fc2aee2_fk_UserProfi">
       <ColNames>userprofile_id</ColNames>
       <RefSchemaName>cmdb_mha</RefSchemaName>
       <RefTableName>userprofile</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="618" parent="278" name="UserProfile_user_per_permission_id_fcca642d_fk_auth_perm">
+    <foreign-key id="609" parent="277" name="UserProfile_user_per_permission_id_fcca642d_fk_auth_perm">
       <ColNames>permission_id</ColNames>
       <RefSchemaName>cmdb_mha</RefSchemaName>
       <RefTableName>auth_permission</RefTableName>

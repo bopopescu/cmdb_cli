@@ -18,7 +18,7 @@ RUN_LOG_FILE = os.path.join(BASEDIR, "log", 'run.log')
 CERT_FILE_PATH = os.path.join(BASEDIR, 'config', 'cert')
 
 # 是否测试模式，测试模时候数据从files目录下读取
-TEST_MODE = False
+TEST_MODE = True
 
 # 采集资产的方式，选项有：agent(默认), salt, ssh
 MODE = 'ssh'
@@ -39,9 +39,9 @@ PLUGINS_DICT = {
 }
 
 # 资产信息API
-ASSET_API = "http://127.0.0.1:8000/api/asset"
+ASSET_API = "http://172.16.111.1:8000/api/asset"
 # 数据库API
-DATABASE_API = "http://127.0.0.1:8000/api/database"
+DATABASE_API = "http://172.16.111.1:8000/api/database"
 
 SERVER_DATABASE_CONF = {
     'user': 'yang',

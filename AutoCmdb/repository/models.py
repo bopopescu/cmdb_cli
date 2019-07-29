@@ -280,6 +280,7 @@ class MysqlInfo(models.Model):
     backup_ip = models.GenericIPAddressField(null=True)  # 备份机器
     archive_ip = models.GenericIPAddressField(null=True)  # 归档机器
     master_ip = models.GenericIPAddressField(null=True)
+    master_port = models.IntegerField()
     version = models.CharField(max_length=15, default='5.7.23')  # 版本
     search_flag = models.CharField(max_length=10, default=0)  # 是否为线下查询
     realm_name = models.CharField(max_length=256, default='')  # 域名

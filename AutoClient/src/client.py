@@ -88,6 +88,7 @@ class AutoBase(object):
         except Exception as e:
             print(e)
             response = e
+        print(response)
         return response.json()
 
     def post_database(self, msg, callback=None):
@@ -203,11 +204,9 @@ class AutoSSH(AutoBase):
         for i in settings.SELECT_OPTIONS:
             task = {}
             if i == 'asset':
-                print(i)
+
                 task = self.get_asset()
-                time.sleep(settings.ASSET_AUTH_TIME + 1)
             elif i == 'database':
-                print(i)
                 task = self.get_database()
             if not task['status']:
                 Logger().log(task['message'], False)
