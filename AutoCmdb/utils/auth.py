@@ -28,14 +28,14 @@ def api_auth_method(request):
     ha = hashlib.md5(ASSET_AUTH_KEY.encode('utf-8'))
     ha.update(bytes("%s|%f" % (ASSET_AUTH_KEY, timestamp), encoding='utf-8'))
     result = ha.hexdigest()
-    # print(result, encrypt)
+    print(result, encrypt)
     if encrypt != result:
         return False
 
     exist = False
     del_keys = []
     for k, v in enumerate(ENCRYPT_LIST):
-        # print(k, v)
+        print(k, v)
         m = v['time']
         n = v['encrypt']
         if m < limit_timestamp:

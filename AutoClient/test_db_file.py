@@ -10,8 +10,12 @@ from files import database
 
 response = BaseResponse()
 
-response.data = database.datainfo
-for item in response.data['database']:
-    for i in response.data['database'][item]:
-        print(i)
+# response.data = database.datainfo
+# for item in response.data['database']:
+#     for i in response.data['database'][item]:
+#         print(i)
+
+
+print(json.dumps(database.datainfo))
+
 

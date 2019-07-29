@@ -88,7 +88,6 @@ class AutoBase(object):
         except Exception as e:
             print(e)
             response = e
-        print(response.json())
         return response.json()
 
     def post_database(self, msg, callback=None):
@@ -100,6 +99,7 @@ class AutoBase(object):
         """
         status = True
         try:
+            print(msg)
             headers = {}
             headers.update(self.auth_key())
             response = requests.post(
@@ -213,19 +213,17 @@ class AutoSSH(AutoBase):
 
             pool = ThreadPoolExecutor(10)
             for item in task['data']:
-                # hostname = item['hostname']    # 用主机名标识唯一，通过ip来进行链接机器
-                hostname = item['ip']
+                hostname = item['hostname']    # 用主机名标识唯一，通过ip来进行链接机器
                 # ip = item['ip']
                 pool.submit(self.run, hostname, i)
             pool.shutdown(wait=True)
 
     def run(self, hostname, module):
         # ssh salt 方式会链接hostname来进行执行命令
-
         server_info = plugins.get_server_info(hostname)
         server_json = Json.dumps(server_info.data)
+        print(server_json)
         if module == 'database':
-            print(server_info)
             self.post_database(server_json, self.callback)
         elif module == 'asset':
             self.post_asset(server_json, self.callback)

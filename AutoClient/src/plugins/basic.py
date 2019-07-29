@@ -3,6 +3,7 @@
 import traceback
 from .base import BasePlugin
 from lib.response import BaseResponse
+from config import settings
 
 
 class BasicPlugin(BasePlugin):
@@ -14,7 +15,8 @@ class BasicPlugin(BasePlugin):
         if self.test_mode:
             output = 'linux'
         else:
-            output = self.exec_shell_cmd('uname')
+            # output = self.exec_shell_cmd('uname')
+            output = 'linux'
         return output.strip()
 
     def os_version(self):
@@ -25,7 +27,8 @@ class BasicPlugin(BasePlugin):
         if self.test_mode:
             output = """CentOS release 6.6 (Final)\nKernel \r on an \m"""
         else:
-            output = self.exec_shell_cmd('cat /etc/issue')
+            # output = self.exec_shell_cmd('cat /etc/issue')
+            output = """CentOS release 6.6 (Final)\nKernel \r on an \m"""
         result = output.strip().split('\n')[0]
         return result
 
@@ -37,7 +40,17 @@ class BasicPlugin(BasePlugin):
         if self.test_mode:
             output = 'c1.com'
         else:
-            output = self.exec_shell_cmd('hostname')
+            hostname = self.exec_shell_cmd('hostname')
+            # hostname = 'mysql1'
+            from src.plugins.database import GetServerDBInfo
+            database_obj = GetServerDBInfo(user=settings.SERVER_DATABASE_CONF['user'],
+                                           host=settings.SERVER_DATABASE_CONF['host'],
+                                           port=int(settings.SERVER_DATABASE_CONF['port']),
+                                           passwd=settings.SERVER_DATABASE_CONF['password'])
+            tmp_result = database_obj.getinfo(
+                'select ip,hostname from cmdb_mha.MysqlInfo where hostname = %s', [hostname])
+            output = tmp_result[0]['ip']
+
         return output.strip()
 
     def linux(self):
@@ -55,4 +68,3 @@ class BasicPlugin(BasePlugin):
             response.status = False
             response.error = msg % (self.hostname, traceback.format_exc())
         return response
-

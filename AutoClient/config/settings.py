@@ -49,7 +49,6 @@ SERVER_DATABASE_CONF = {
     'port': '3306',
     'password': '111111',
     'db': 'cmdb',
-    'sql': 'select ip,port,db_name from cmdb.MysqlInfo'
 }
 
 CLIENT_DATABASE_CONF = {
@@ -62,7 +61,6 @@ CLIENT_DATABASE_CONF = {
                  'processlist': 'select user,host,db,time,info from information_schema.processlist where info is not null;',
                  'engine': 'show engine innodb status;',
                  },
-
 }
 
 SELECT_OPTIONS = ['database']   # 从server端收集数据库/服务器hostname(ip)的信息 ssh中 填写 'database'或 'asset'或者两者都填写

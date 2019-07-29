@@ -56,7 +56,8 @@ class DatabasePlugin(object):
                                            port=int(settings.SERVER_DATABASE_CONF['port']),
                                            passwd=settings.SERVER_DATABASE_CONF['password'])
 
-            ser_db_list = database_obj.getinfo(settings.SERVER_DATABASE_CONF['sql'], )
+            ser_db_list = database_obj.getinfo('select ip,hostname,port,db_name from cmdb_mha.MysqlInfo where hostname = "mysql1"',)
+            print(ser_db_list)
             # print(ser_db_list)
 
             for item in ser_db_list:
@@ -85,4 +86,4 @@ class DatabasePlugin(object):
 obj_1 = DatabasePlugin().linux()
 print(obj_1.data)
 
-print(Json.dumps(obj_1.data))
+
