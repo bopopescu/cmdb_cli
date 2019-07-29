@@ -114,3 +114,345 @@ TypeError: %d format: a number is required, not str
     passwd=settings.SERVER_DATABASE_CONF['password'])
 TypeError: __init__() missing 1 required positional argument: 'db'
 
+2019-07-29 11:47:13,351  - ERROR :  172.16.111.131 BasicPlugin Error:Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 47, in linux
+    'os_platform': self.os_platform(),
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 17, in os_platform
+    output = self.exec_shell_cmd('uname')
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 45, in exec_shell_cmd
+    output = func(cmd)
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 26, in ssh
+    private_key = paramiko.RSAKey.from_private_key_file(settings.SSH_PRIVATE_KEY)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 206, in from_private_key_file
+    key = cls(filename=filename, password=password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 55, in __init__
+    self._from_private_key_file(filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 175, in _from_private_key_file
+    data = self._read_private_key_file("RSA", filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 278, in _read_private_key_file
+    with open(filename, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/.ssh/id_rsa'
+
+2019-07-29 11:47:13,352  - ERROR :  172.16.111.131 BasicPlugin Error:Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 47, in linux
+    'os_platform': self.os_platform(),
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 17, in os_platform
+    output = self.exec_shell_cmd('uname')
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 45, in exec_shell_cmd
+    output = func(cmd)
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 26, in ssh
+    private_key = paramiko.RSAKey.from_private_key_file(settings.SSH_PRIVATE_KEY)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 206, in from_private_key_file
+    key = cls(filename=filename, password=password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 55, in __init__
+    self._from_private_key_file(filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 175, in _from_private_key_file
+    data = self._read_private_key_file("RSA", filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 278, in _read_private_key_file
+    with open(filename, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/.ssh/id_rsa'
+
+2019-07-29 11:51:31,735  - ERROR :  172.16.111.131 BasicPlugin Error:Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 47, in linux
+    'os_platform': self.os_platform(),
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 17, in os_platform
+    output = self.exec_shell_cmd('uname')
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 45, in exec_shell_cmd
+    output = func(cmd)
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 26, in ssh
+    private_key = paramiko.RSAKey.from_private_key_file(settings.SSH_PRIVATE_KEY)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 206, in from_private_key_file
+    key = cls(filename=filename, password=password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 55, in __init__
+    self._from_private_key_file(filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 175, in _from_private_key_file
+    data = self._read_private_key_file("RSA", filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 278, in _read_private_key_file
+    with open(filename, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/.ssh/id_rsa'
+
+2019-07-29 11:51:31,736  - ERROR :  172.16.111.131 BasicPlugin Error:Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 47, in linux
+    'os_platform': self.os_platform(),
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 17, in os_platform
+    output = self.exec_shell_cmd('uname')
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 45, in exec_shell_cmd
+    output = func(cmd)
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 26, in ssh
+    private_key = paramiko.RSAKey.from_private_key_file(settings.SSH_PRIVATE_KEY)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 206, in from_private_key_file
+    key = cls(filename=filename, password=password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 55, in __init__
+    self._from_private_key_file(filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 175, in _from_private_key_file
+    data = self._read_private_key_file("RSA", filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 278, in _read_private_key_file
+    with open(filename, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/.ssh/id_rsa'
+
+2019-07-29 11:53:51,128  - ERROR :  172.16.111.131 BasicPlugin Error:Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 47, in linux
+    'os_platform': self.os_platform(),
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 17, in os_platform
+    output = self.exec_shell_cmd('uname')
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 45, in exec_shell_cmd
+    output = func(cmd)
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 26, in ssh
+    private_key = paramiko.RSAKey.from_private_key_file(settings.SSH_PRIVATE_KEY)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 206, in from_private_key_file
+    key = cls(filename=filename, password=password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 55, in __init__
+    self._from_private_key_file(filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 175, in _from_private_key_file
+    data = self._read_private_key_file("RSA", filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 278, in _read_private_key_file
+    with open(filename, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/.ssh/id_rsa'
+
+2019-07-29 11:53:51,128  - ERROR :  172.16.111.131 BasicPlugin Error:Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 47, in linux
+    'os_platform': self.os_platform(),
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 17, in os_platform
+    output = self.exec_shell_cmd('uname')
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 45, in exec_shell_cmd
+    output = func(cmd)
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 26, in ssh
+    private_key = paramiko.RSAKey.from_private_key_file(settings.SSH_PRIVATE_KEY)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 206, in from_private_key_file
+    key = cls(filename=filename, password=password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 55, in __init__
+    self._from_private_key_file(filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 175, in _from_private_key_file
+    data = self._read_private_key_file("RSA", filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 278, in _read_private_key_file
+    with open(filename, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/.ssh/id_rsa'
+
+2019-07-29 11:55:34,161  - ERROR :  172.16.111.131 BasicPlugin Error:Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 47, in linux
+    'os_platform': self.os_platform(),
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 17, in os_platform
+    output = self.exec_shell_cmd('uname')
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 45, in exec_shell_cmd
+    output = func(cmd)
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 26, in ssh
+    private_key = paramiko.RSAKey.from_private_key_file(settings.SSH_PRIVATE_KEY)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 206, in from_private_key_file
+    key = cls(filename=filename, password=password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 55, in __init__
+    self._from_private_key_file(filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 175, in _from_private_key_file
+    data = self._read_private_key_file("RSA", filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 278, in _read_private_key_file
+    with open(filename, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/.ssh/id_rsa'
+
+2019-07-29 11:55:34,162  - ERROR :  172.16.111.131 BasicPlugin Error:Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 47, in linux
+    'os_platform': self.os_platform(),
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 17, in os_platform
+    output = self.exec_shell_cmd('uname')
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 45, in exec_shell_cmd
+    output = func(cmd)
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 26, in ssh
+    private_key = paramiko.RSAKey.from_private_key_file(settings.SSH_PRIVATE_KEY)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 206, in from_private_key_file
+    key = cls(filename=filename, password=password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 55, in __init__
+    self._from_private_key_file(filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 175, in _from_private_key_file
+    data = self._read_private_key_file("RSA", filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 278, in _read_private_key_file
+    with open(filename, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/.ssh/id_rsa'
+
+2019-07-29 11:57:00,618  - ERROR :  172.16.111.131 BasicPlugin Error:Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 47, in linux
+    'os_platform': self.os_platform(),
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 17, in os_platform
+    output = self.exec_shell_cmd('uname')
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 45, in exec_shell_cmd
+    output = func(cmd)
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 26, in ssh
+    private_key = paramiko.RSAKey.from_private_key_file(settings.SSH_PRIVATE_KEY)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 206, in from_private_key_file
+    key = cls(filename=filename, password=password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 55, in __init__
+    self._from_private_key_file(filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 175, in _from_private_key_file
+    data = self._read_private_key_file("RSA", filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 278, in _read_private_key_file
+    with open(filename, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/.ssh/id_rsa'
+
+2019-07-29 11:57:00,620  - ERROR :  172.16.111.131 BasicPlugin Error:Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 47, in linux
+    'os_platform': self.os_platform(),
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 17, in os_platform
+    output = self.exec_shell_cmd('uname')
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 45, in exec_shell_cmd
+    output = func(cmd)
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 26, in ssh
+    private_key = paramiko.RSAKey.from_private_key_file(settings.SSH_PRIVATE_KEY)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 206, in from_private_key_file
+    key = cls(filename=filename, password=password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 55, in __init__
+    self._from_private_key_file(filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 175, in _from_private_key_file
+    data = self._read_private_key_file("RSA", filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 278, in _read_private_key_file
+    with open(filename, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/.ssh/id_rsa'
+
+2019-07-29 11:58:15,309  - ERROR :  172.16.111.131 BasicPlugin Error:Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 47, in linux
+    'os_platform': self.os_platform(),
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 17, in os_platform
+    output = self.exec_shell_cmd('uname')
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 45, in exec_shell_cmd
+    output = func(cmd)
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 26, in ssh
+    private_key = paramiko.RSAKey.from_private_key_file(settings.SSH_PRIVATE_KEY)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 206, in from_private_key_file
+    key = cls(filename=filename, password=password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 55, in __init__
+    self._from_private_key_file(filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 175, in _from_private_key_file
+    data = self._read_private_key_file("RSA", filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 278, in _read_private_key_file
+    with open(filename, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/.ssh/id_rsa'
+
+2019-07-29 11:58:15,309  - ERROR :  172.16.111.131 BasicPlugin Error:Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 47, in linux
+    'os_platform': self.os_platform(),
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 17, in os_platform
+    output = self.exec_shell_cmd('uname')
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 45, in exec_shell_cmd
+    output = func(cmd)
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 26, in ssh
+    private_key = paramiko.RSAKey.from_private_key_file(settings.SSH_PRIVATE_KEY)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 206, in from_private_key_file
+    key = cls(filename=filename, password=password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 55, in __init__
+    self._from_private_key_file(filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 175, in _from_private_key_file
+    data = self._read_private_key_file("RSA", filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 278, in _read_private_key_file
+    with open(filename, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/.ssh/id_rsa'
+
+2019-07-29 12:59:13,381  - ERROR :  172.16.111.131 BasicPlugin Error:Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 47, in linux
+    'os_platform': self.os_platform(),
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 17, in os_platform
+    output = self.exec_shell_cmd('uname')
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 45, in exec_shell_cmd
+    output = func(cmd)
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 26, in ssh
+    private_key = paramiko.RSAKey.from_private_key_file(settings.SSH_PRIVATE_KEY)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 206, in from_private_key_file
+    key = cls(filename=filename, password=password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 55, in __init__
+    self._from_private_key_file(filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 175, in _from_private_key_file
+    data = self._read_private_key_file("RSA", filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 278, in _read_private_key_file
+    with open(filename, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/.ssh/id_rsa'
+
+2019-07-29 12:59:13,382  - ERROR :  172.16.111.131 BasicPlugin Error:Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 47, in linux
+    'os_platform': self.os_platform(),
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 17, in os_platform
+    output = self.exec_shell_cmd('uname')
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 45, in exec_shell_cmd
+    output = func(cmd)
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 26, in ssh
+    private_key = paramiko.RSAKey.from_private_key_file(settings.SSH_PRIVATE_KEY)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 206, in from_private_key_file
+    key = cls(filename=filename, password=password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 55, in __init__
+    self._from_private_key_file(filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 175, in _from_private_key_file
+    data = self._read_private_key_file("RSA", filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 278, in _read_private_key_file
+    with open(filename, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/.ssh/id_rsa'
+
+2019-07-29 13:03:28,306  - ERROR :  172.16.111.131 BasicPlugin Error:Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 47, in linux
+    'os_platform': self.os_platform(),
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 17, in os_platform
+    output = self.exec_shell_cmd('uname')
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 45, in exec_shell_cmd
+    output = func(cmd)
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 26, in ssh
+    private_key = paramiko.RSAKey.from_private_key_file(settings.SSH_PRIVATE_KEY)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 206, in from_private_key_file
+    key = cls(filename=filename, password=password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 55, in __init__
+    self._from_private_key_file(filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 175, in _from_private_key_file
+    data = self._read_private_key_file("RSA", filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 278, in _read_private_key_file
+    with open(filename, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/.ssh/id_rsa'
+
+2019-07-29 13:03:28,306  - ERROR :  172.16.111.131 BasicPlugin Error:Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 47, in linux
+    'os_platform': self.os_platform(),
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 17, in os_platform
+    output = self.exec_shell_cmd('uname')
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 45, in exec_shell_cmd
+    output = func(cmd)
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 26, in ssh
+    private_key = paramiko.RSAKey.from_private_key_file(settings.SSH_PRIVATE_KEY)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 206, in from_private_key_file
+    key = cls(filename=filename, password=password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 55, in __init__
+    self._from_private_key_file(filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 175, in _from_private_key_file
+    data = self._read_private_key_file("RSA", filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 278, in _read_private_key_file
+    with open(filename, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/.ssh/id_rsa'
+
+2019-07-29 14:41:10,384  - ERROR :  None BasicPlugin Error:Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 47, in linux
+    'os_platform': self.os_platform(),
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 17, in os_platform
+    output = self.exec_shell_cmd('uname')
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 45, in exec_shell_cmd
+    output = func(cmd)
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 26, in ssh
+    private_key = paramiko.RSAKey.from_private_key_file(settings.SSH_PRIVATE_KEY)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 206, in from_private_key_file
+    key = cls(filename=filename, password=password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 55, in __init__
+    self._from_private_key_file(filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 175, in _from_private_key_file
+    data = self._read_private_key_file("RSA", filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 278, in _read_private_key_file
+    with open(filename, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/.ssh/id_rsa'
+
+2019-07-29 14:44:26,388  - ERROR :  None BasicPlugin Error:Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 47, in linux
+    'os_platform': self.os_platform(),
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 17, in os_platform
+    output = self.exec_shell_cmd('uname')
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 45, in exec_shell_cmd
+    output = func(cmd)
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 26, in ssh
+    private_key = paramiko.RSAKey.from_private_key_file(settings.SSH_PRIVATE_KEY)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 206, in from_private_key_file
+    key = cls(filename=filename, password=password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 55, in __init__
+    self._from_private_key_file(filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/rsakey.py", line 175, in _from_private_key_file
+    data = self._read_private_key_file("RSA", filename, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/pkey.py", line 278, in _read_private_key_file
+    with open(filename, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/.ssh/id_rsa'
+

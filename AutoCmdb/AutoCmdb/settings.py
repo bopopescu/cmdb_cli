@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'AutoCmdb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cmdb',
+        'NAME': 'cmdb_mha',
         'USER': 'yang',
         'PASSWORD': '111111',
         'HOST': '172.16.111.131',

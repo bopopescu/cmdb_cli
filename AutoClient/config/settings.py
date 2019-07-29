@@ -24,17 +24,17 @@ TEST_MODE = False
 MODE = 'ssh'
 
 # 如果采用SSH方式，则需要配置SSH的KEY和USER
-SSH_PRIVATE_KEY = "/home/auto/.ssh/id_rsa"
+SSH_PRIVATE_KEY = "/root/.ssh/id_rsa"
 SSH_USER = "root"
 SSH_PORT = 22
 
 # 采集硬件数据的插件
 PLUGINS_DICT = {
-    'cpu': 'src.plugins.cpu.CpuPlugin',
-    'disk': 'src.plugins.disk.DiskPlugin',
-    'main_board': 'src.plugins.main_board.MainBoardPlugin',
-    'memory': 'src.plugins.memory.MemoryPlugin',
-    'nic': 'src.plugins.nic.NicPlugin',
+    # 'cpu': 'src.plugins.cpu.CpuPlugin',
+    # 'disk': 'src.plugins.disk.DiskPlugin',
+    # 'main_board': 'src.plugins.main_board.MainBoardPlugin',
+    # 'memory': 'src.plugins.memory.MemoryPlugin',
+    # 'nic': 'src.plugins.nic.NicPlugin',
     'database': 'src.plugins.database.DatabasePlugin',
 }
 
@@ -64,6 +64,11 @@ CLIENT_DATABASE_CONF = {
                  },
 
 }
+
+SELECT_OPTIONS = ['database']   # 从server端收集数据库/服务器hostname(ip)的信息 ssh中 填写 'database'或 'asset'或者两者都填写
+
+ASSET_AUTH_TIME = 2
+
 """
 POST时，返回值：{'code': xx, 'message': 'xx'}
  code:

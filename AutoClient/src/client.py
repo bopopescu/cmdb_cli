@@ -9,6 +9,7 @@ from src import plugins
 from lib.serialize import Json
 from lib.log import Logger
 from config import settings
+import time
 
 from concurrent.futures import ThreadPoolExecutor
 
@@ -16,7 +17,7 @@ from concurrent.futures import ThreadPoolExecutor
 class AutoBase(object):
     def __init__(self):
         self.asset_api = settings.ASSET_API
-        # self.database_api = settings.DATABASE_API
+        self.database_api = settings.DATABASE_API
         self.key = settings.KEY
         self.key_name = settings.AUTH_KEY_NAME
 
@@ -35,7 +36,7 @@ class AutoBase(object):
     def get_asset(self):
         """
         get方式向获取未采集的资产
-        :return: {"data": [{"hostname": "c1.com"}, {"hostname": "c2.com"}], "error": null, "message": null, "status": true}
+        :return: {"data": [{"hostname": "c1.com",ip:'172.16.111.121'}, {"hostname": "c2.com",ip:'172.16.111.122'}], "error": null, "message": null, "status": true}
         """
         try:
             headers = {}
@@ -72,27 +73,44 @@ class AutoBase(object):
         if callback:
             callback(status, response)
 
-    # def post_database(self, msg, callback=None):
-    #     """
-    #     post方式向接口提交资产信息
-    #     :param msg:
-    #     :param callback:
-    #     :return:
-    #     """
-    #     status = True
-    #     try:
-    #         headers = {}
-    #         headers.update(self.auth_key())
-    #         response = requests.post(
-    #             url=self.database_api,
-    #             headers=headers,
-    #             json=msg
-    #         )
-    #     except Exception as e:
-    #         response = e
-    #         status = False
-    #     if callback:
-    #         callback(status, response)
+    def get_database(self):
+        """
+        get方式向获取未采集的资产
+        :return: {"data": [{"hostname": "c1.com",ip:'172.16.111.121'}, {"hostname": "c2.com",ip:'172.16.111.122'}], "error": null, "message": null, "status": true}
+        """
+        try:
+            headers = {}
+            headers.update(self.auth_key())
+            response = requests.get(
+                url=self.database_api,
+                headers=headers
+            )
+        except Exception as e:
+            print(e)
+            response = e
+        return response.json()
+
+    def post_database(self, msg, callback=None):
+        """
+        post方式向接口提交资产信息
+        :param msg:
+        :param callback:
+        :return:
+        """
+        status = True
+        try:
+            headers = {}
+            headers.update(self.auth_key())
+            response = requests.post(
+                url=self.database_api,
+                headers=headers,
+                json=msg
+            )
+        except Exception as e:
+            response = e
+            status = False
+        if callback:
+            callback(status, response)
 
     def process(self):
         """
@@ -182,21 +200,35 @@ class AutoSSH(AutoBase):
         根据主机名获取资产信息，将其发送到API
         :return:
         """
-        task = self.get_asset()
-        if not task['status']:
-            Logger().log(task['message'], False)
+        for i in settings.SELECT_OPTIONS:
+            task = {}
+            if i == 'asset':
+                print(i)
+                task = self.get_asset()
+                time.sleep(settings.ASSET_AUTH_TIME + 1)
+            elif i == 'database':
+                print(i)
+                task = self.get_database()
+            if not task['status']:
+                Logger().log(task['message'], False)
 
-        pool = ThreadPoolExecutor(10)
-        for item in task['data']:
-            hostname = item['hostname']
-            pool.submit(self.run, hostname)
-        pool.shutdown(wait=True)
+            pool = ThreadPoolExecutor(10)
+            for item in task['data']:
+                # hostname = item['hostname']    # 用主机名标识唯一，通过ip来进行链接机器
+                hostname = item['ip']
+                # ip = item['ip']
+                pool.submit(self.run, hostname, i)
+            pool.shutdown(wait=True)
 
-    def run(self, hostname):
+    def run(self, hostname, module):
         # ssh salt 方式会链接hostname来进行执行命令
+
         server_info = plugins.get_server_info(hostname)
         server_json = Json.dumps(server_info.data)
-        self.post_asset(server_json, self.callback)
+        if module == 'database':
+            self.post_database(server_json, self.callback)
+        elif module == 'asset':
+            self.post_asset(server_json, self.callback)
         # self.post_database(server_json, self.callback)
 
 
@@ -206,26 +238,32 @@ class AutoSalt(AutoBase):
         根据主机名获取资产信息，将其发送到API
         :return:
         {
-            "data": [ {"hostname": "c1.com"}, {"hostname": "c2.com"}],
+            "data": [ {"hostname": "c1.com",'ip':'0.0.0.0'}, {"hostname": "c2.com",'ip':'0.0.0.0'}],
            "error": null,
            "message": null,
            "status": true
         }
         """
-        task = self.get_asset()
-        if not task['status']:
-            Logger().log(task['message'], False)
+        for i in settings.SELECT_OPTIONS:
+            task = {}
+            if i == 'asset':
+                task = self.get_asset()
+            elif i == 'database':
+                task = self.get_database()
+            task = self.get_asset()
+            if not task['status']:
+                Logger().log(task['message'], False)
 
-        # 创建线程池：最大可用线程10
-        pool = ThreadPoolExecutor(10)
-        # "data": [ {"hostname": "c1.com"}, {"hostname": "c2.com"}],
-        for item in task['data']:
-            # c1.com  c2.com
-            hostname = item['hostname']
-            pool.submit(self.run, hostname)
-            # run(c1.com) 1
-            # run(c2.com) 2
-        pool.shutdown(wait=True)
+            # 创建线程池：最大可用线程10
+            pool = ThreadPoolExecutor(10)
+            # "data": [ {"hostname": "c1.com"}, {"hostname": "c2.com"}],
+            for item in task['data']:
+                # c1.com  c2.com
+                hostname = item['hostname']
+                pool.submit(self.run, hostname)
+                # run(c1.com) 1
+                # run(c2.com) 2
+            pool.shutdown(wait=True)
 
     def run(self, hostname):
         # 获取指定主机名的资产信息

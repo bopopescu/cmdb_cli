@@ -8,4 +8,5 @@ class BaseResponse(object):
         self.message = None
         self.data = None
         self.error = None
+        self.style = None
 

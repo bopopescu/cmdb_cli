@@ -267,21 +267,6 @@ class ErrorLog(models.Model):
         return self.title
 
 
-class MysqlInitInfo(models.Model):
-    # 显示信息 server里都有 初始化表
-    server_ip = models.GenericIPAddressField()
-    user = models.CharField(max_length=30)
-    status = models.CharField(max_length=10)  # 主从信息
-    version = models.CharField(max_length=10)  # 版本
-    create_time = models.DateTimeField(auto_now_add=True)
-    change_time = models.DateTimeField(auto_now=True)
-    app_name = models.CharField(default='mysql', max_length=20)
-
-    class Meta:
-        unique_together = ("app_name", "server_ip")
-        db_table = 'MysqlInitInfo'
-
-
 class MysqlInfo(models.Model):
     # 数据库信息
     db_name = models.CharField(max_length=50)
@@ -290,16 +275,17 @@ class MysqlInfo(models.Model):
     ip = models.GenericIPAddressField()
     service_name = models.CharField(max_length=10)  # 业务名称
     port = models.IntegerField()
-    description = models.CharField(max_length=50, null=True)
+    description = models.CharField(max_length=50, null=True)  # 唯一标识
     root_pass = models.CharField(max_length=30)  # 密码
     backup_ip = models.GenericIPAddressField(null=True)  # 备份机器
     archive_ip = models.GenericIPAddressField(null=True)  # 归档机器
+    master_ip = models.GenericIPAddressField(null=True)
     version = models.CharField(max_length=15, default='5.7.23')  # 版本
     search_flag = models.CharField(max_length=10, default=0)  # 是否为线下查询
     realm_name = models.CharField(max_length=256, default='')  # 域名
 
     class Meta:
-        unique_together = ("ip", "port", "db_name", "role")
+        unique_together = ("ip", 'hostname', "port", "db_name", "role")
         db_table = 'MysqlInfo'
 
 
@@ -324,19 +310,22 @@ class DBGrantHistory(models.Model):
         # 同一账户同一库的同一状态的数据
 
 
-class DatabaseInfo(models.Model):  # 数据机信息表
+class InstanceInfo(models.Model):  # 实例信息表
     db_ip = models.GenericIPAddressField()  # 从库or 主库ip
+    hostname = models.CharField(max_length=30)
+    role = models.CharField(max_length=10)  # 主从信息
+    version = models.CharField(max_length=10)  # 版本
     port = models.IntegerField()
     IN_BP = models.CharField(max_length=32, default='')
     db_space = models.CharField(max_length=16, default='')
-    db_username = models.CharField(max_length=30)
+    db_name = models.CharField(max_length=30)
     max_tablename = models.CharField(max_length=32, default='')
     max_tablespace = models.CharField(max_length=32, default='')
     total_data_free = models.CharField(max_length=32, default='')
     create_time = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        unique_together = ("max_tablename", "db_username", "db_ip", "port",)
+        unique_together = ("max_tablename", "db_name", "db_ip", "port",)
         db_table = 'DatabaseInfo'
 
 
