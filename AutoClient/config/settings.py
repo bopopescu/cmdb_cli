@@ -18,7 +18,7 @@ RUN_LOG_FILE = os.path.join(BASEDIR, "log", 'run.log')
 CERT_FILE_PATH = os.path.join(BASEDIR, 'config', 'cert')
 
 # 是否测试模式，测试模时候数据从files目录下读取
-TEST_MODE = True
+TEST_MODE = False
 
 # 采集资产的方式，选项有：agent(默认), salt, ssh
 MODE = 'ssh'

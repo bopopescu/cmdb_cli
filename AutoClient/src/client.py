@@ -88,7 +88,7 @@ class AutoBase(object):
         except Exception as e:
             print(e)
             response = e
-        print(response)
+        print(response.json())
         return response.json()
 
     def post_database(self, msg, callback=None):
@@ -204,10 +204,10 @@ class AutoSSH(AutoBase):
         for i in settings.SELECT_OPTIONS:
             task = {}
             if i == 'asset':
-
                 task = self.get_asset()
             elif i == 'database':
                 task = self.get_database()
+                # print(task)
             if not task['status']:
                 Logger().log(task['message'], False)
 
@@ -225,6 +225,7 @@ class AutoSSH(AutoBase):
         server_info = plugins.get_server_info(hostname)
         server_json = Json.dumps(server_info.data)
         if module == 'database':
+            print(server_info)
             self.post_database(server_json, self.callback)
         elif module == 'asset':
             self.post_asset(server_json, self.callback)

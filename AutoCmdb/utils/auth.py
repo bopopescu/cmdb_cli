@@ -22,20 +22,20 @@ def api_auth_method(request):
     encrypt, timestamp = sp
     timestamp = float(timestamp)
     limit_timestamp = time.time() - ASSET_AUTH_TIME
-    print(limit_timestamp, timestamp)
+    # print(limit_timestamp, timestamp)
     if limit_timestamp > timestamp:
         return False
     ha = hashlib.md5(ASSET_AUTH_KEY.encode('utf-8'))
     ha.update(bytes("%s|%f" % (ASSET_AUTH_KEY, timestamp), encoding='utf-8'))
     result = ha.hexdigest()
-    print(result, encrypt)
+    # print(result, encrypt)
     if encrypt != result:
         return False
 
     exist = False
     del_keys = []
     for k, v in enumerate(ENCRYPT_LIST):
-        print(k, v)
+        # print(k, v)
         m = v['time']
         n = v['encrypt']
         if m < limit_timestamp:

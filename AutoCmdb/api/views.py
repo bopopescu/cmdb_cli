@@ -111,7 +111,7 @@ class DatabaseView(View):
         response = database.get_untreated_database()
         return JsonResponse(response.__dict__)
 
-    @method_decorator(auth.api_auth)
+    # @method_decorator(auth.api_auth)
     def post(self, request, *args, **kwargs):
         """
         更新或者添加资产信息
@@ -122,6 +122,7 @@ class DatabaseView(View):
         """
         server_info = json.loads(request.body.decode('utf-8'))
         server_info = json.loads(server_info)
+        print(111,server_info)
         hostname = server_info['hostname']
 
         ret = {'code': 1000, 'message': '[%s]更新完成' % hostname}
