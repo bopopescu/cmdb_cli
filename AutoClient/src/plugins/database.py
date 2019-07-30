@@ -53,7 +53,7 @@ class DatabasePlugin(BasePlugin):
                                                passwd=settings.SERVER_DATABASE_CONF['password'])
 
                 ser_db_list = database_obj.getinfo(
-                    'select ip,hostname from cmdb_mha.MysqlInfo where hostname = %s', [self.hostname])
+                    'select ip,port,hostname,db_name from cmdb_mha.MysqlInfo where hostname = %s', [self.hostname])
                 for item in ser_db_list:
                     for subject in settings.CLIENT_DATABASE_CONF['sql_list']:
                         client_obj = GetServerDBInfo(user=settings.CLIENT_DATABASE_CONF['user'],

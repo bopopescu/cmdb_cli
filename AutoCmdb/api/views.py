@@ -123,25 +123,24 @@ class DatabaseView(View):
         server_info = json.loads(request.body.decode('utf-8'))
         server_info = json.loads(server_info)
         hostname = server_info['hostname']
-        print(hostname)
 
         ret = {'code': 1000, 'message': '[%s]更新完成' % hostname}
 
-        server_obj = models.Server.objects.filter(hostname=hostname).select_related('asset').first()
-        if not server_obj:
+        mysql_obj = models.MysqlInfo.objects.filter(hostname=hostname).first()
+        if not mysql_obj:
             ret['code'] = 1002
-            ret['message'] = '[%s]资产不存在' % hostname
+            ret['message'] = '[%s]数据库不存在' % hostname
             return JsonResponse(ret)
 
         for k, v in config.PLUGINS_DICT.items():
             module_path, cls_name = v.rsplit('.', 1)
             cls = getattr(importlib.import_module(module_path), cls_name)
-            response = cls.process(server_obj, server_info, None)
+            response = cls.process(mysql_obj, server_info, None)
             if not response.status:
                 ret['code'] = 1003
                 ret['message'] = "[%s]资产更新异常" % hostname
             if hasattr(cls, 'update_last_time'):
-                cls.update_last_time(server_obj, None)
+                cls.update_last_time(mysql_obj, None)
 
         return JsonResponse(ret)
 

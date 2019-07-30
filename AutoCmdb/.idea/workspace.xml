@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0972200a-68f6-4ece-be41-d029e08e5d55" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../AutoClient/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AutoClient/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoClient/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AutoClient/log/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoClient/log/error.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AutoClient/src/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoClient/src/client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AutoClient/src/plugins/basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoClient/src/plugins/basic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4d22968e-cc4b-428d-bc68-38d829e8ae3d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4d22968e-cc4b-428d-bc68-38d829e8ae3d.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cdae16d3-0459-4d08-8afd-eaf5390a47e3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AutoClient/src/plugins/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoClient/src/plugins/database.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/service/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/service/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/repository/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/auth.py" afterDir="false" />
     </list>
     <ignored path="AutoCmdb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,10 +63,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/service/asset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="44" selection-start-line="44" selection-end-line="44" />
+            <state relative-caret-position="90">
+              <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="29" />
               <folding>
-                <element signature="e#45#61#0" expanded="true" />
                 <element signature="e#1119#1163#0" />
                 <element signature="e#4414#4450#0" />
               </folding>
@@ -79,8 +76,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/auth.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+            <state relative-caret-position="111">
+              <caret line="53" column="37" lean-forward="true" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
+              <folding>
+                <element signature="e#45#56#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,8 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/service/database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+            <state relative-caret-position="-816">
+              <caret line="57" column="12" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
               <folding>
                 <element signature="e#92#108#0" expanded="true" />
               </folding>
@@ -109,8 +109,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/repository/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="273" column="12" selection-start-line="273" selection-start-column="4" selection-end-line="273" selection-end-column="12" />
+            <state relative-caret-position="225">
+              <caret line="257" column="42" selection-start-line="257" selection-start-column="42" selection-end-line="257" selection-end-column="42" />
               <folding>
                 <element signature="e#203#496#0" />
                 <element signature="e#534#830#0" />
@@ -125,19 +125,7 @@
                 <element signature="e#5758#6249#0" />
                 <element signature="e#6284#6918#0" />
                 <element signature="e#6958#7509#0" />
-                <element signature="e#7546#7947#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="das://4d22968e-cc4b-428d-bc68-38d829e8ae3d/schema/cmdb_mha/table/mysqlinfo">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true">
-                <filter text="" />
-              </filtering>
             </state>
           </provider>
         </entry>
@@ -145,8 +133,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AutoCmdb/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="512">
+              <caret line="133" selection-start-line="133" selection-end-line="133" />
             </state>
           </provider>
         </entry>
@@ -154,20 +142,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+            <state>
+              <caret column="32" lean-forward="true" selection-start-column="32" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2040">
-              <caret line="147" selection-start-line="147" selection-end-line="147" />
+            <state relative-caret-position="350">
+              <caret line="131" column="37" selection-start-line="131" selection-start-column="37" selection-end-line="131" selection-end-column="37" />
               <folding>
                 <element signature="e#45#56#0" expanded="true" />
               </folding>
@@ -254,13 +239,13 @@
         <option value="$PROJECT_DIR$/api/service/asset.py" />
         <option value="$PROJECT_DIR$/api/urls.py" />
         <option value="$PROJECT_DIR$/api/config.py" />
-        <option value="$PROJECT_DIR$/repository/models.py" />
         <option value="$PROJECT_DIR$/AutoCmdb/settings.py" />
-        <option value="$PROJECT_DIR$/utils/auth.py" />
-        <option value="$PROJECT_DIR$/api/views.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4d22968e-cc4b-428d-bc68-38d829e8ae3d/console_1.sql" />
         <option value="$PROJECT_DIR$/api/service/database.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/repository/models.py" />
+        <option value="$PROJECT_DIR$/utils/auth.py" />
+        <option value="$PROJECT_DIR$/api/views.py" />
       </list>
     </option>
   </component>
@@ -285,7 +270,17 @@
             <path>
               <item name="AutoCmdb" type="b2602c69:ProjectViewProjectNode" />
               <item name="AutoCmdb" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AutoCmdb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AutoCmdb" type="462c0819:PsiDirectoryNode" />
               <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AutoCmdb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AutoCmdb" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -419,12 +414,12 @@
       <workItem from="1564017016911" duration="26512000" />
       <workItem from="1564364878399" duration="2132000" />
       <workItem from="1564367487880" duration="25058000" />
-      <workItem from="1564411916535" duration="598000" />
+      <workItem from="1564411916535" duration="3467000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80237000" />
+    <option name="totallyTimeSpent" value="83106000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -450,7 +445,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32961586" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32961586" />
       <window_info anchor="bottom" id="Changes" order="8" />
       <window_info anchor="bottom" id="Application Servers" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49928468" weight="0.32961586" />
@@ -502,22 +497,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-          <folding>
-            <element signature="e#45#74#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/cdae16d3-0459-4d08-8afd-eaf5390a47e3/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/templates/asset_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -770,39 +749,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://4d22968e-cc4b-428d-bc68-38d829e8ae3d/schema/cmdb_mha/table/mysqlinfo">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="78" column="13" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/traceback.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-483" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AutoCmdb/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="133" selection-start-line="133" selection-end-line="133" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/api/service/asset.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="29" />
           <folding>
-            <element signature="e#45#61#0" expanded="true" />
             <element signature="e#1119#1163#0" />
             <element signature="e#4414#4450#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/config.py">
+    <entry file="file://$PROJECT_DIR$/api/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="56" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/service/database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-          <folding>
-            <element signature="e#92#108#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="32" lean-forward="true" selection-start-column="32" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/repository/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="273" column="12" selection-start-line="273" selection-start-column="4" selection-end-line="273" selection-end-column="12" />
+        <state relative-caret-position="225">
+          <caret line="257" column="42" selection-start-line="257" selection-start-column="42" selection-end-line="257" selection-end-column="42" />
           <folding>
             <element signature="e#203#496#0" />
             <element signature="e#534#830#0" />
@@ -817,51 +813,53 @@
             <element signature="e#5758#6249#0" />
             <element signature="e#6284#6918#0" />
             <element signature="e#6958#7509#0" />
-            <element signature="e#7546#7947#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AutoCmdb/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
+    <entry file="das://4d22968e-cc4b-428d-bc68-38d829e8ae3d/schema/cmdb_mha/table/errorlog">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/urls.py">
+    <entry file="file://$PROJECT_DIR$/utils/auth.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2040">
-          <caret line="147" selection-start-line="147" selection-end-line="147" />
+        <state relative-caret-position="111">
+          <caret line="53" column="37" lean-forward="true" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
           <folding>
             <element signature="e#45#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/auth.py">
+    <entry file="file://$PROJECT_DIR$/api/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+        <state relative-caret-position="120">
+          <caret line="8" column="56" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="das://4d22968e-cc4b-428d-bc68-38d829e8ae3d/schema/cmdb_mha/table/mysqlinfo">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
+    <entry file="file://$PROJECT_DIR$/api/service/database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-816">
+          <caret line="57" column="12" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
+          <folding>
+            <element signature="e#92#108#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="131" column="37" selection-start-line="131" selection-start-column="37" selection-end-line="131" selection-end-column="37" />
+          <folding>
+            <element signature="e#45#56#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -6,6 +6,9 @@ from AutoCmdb.settings import ASSET_AUTH_HEADER_NAME
 from AutoCmdb.settings import ASSET_AUTH_KEY
 from AutoCmdb.settings import ASSET_AUTH_TIME
 from django.http import JsonResponse
+from utils.response import BaseResponse
+from repository import models
+import traceback
 
 ENCRYPT_LIST = [
     # {'encrypt': encrypt, 'time': timestamp
@@ -13,6 +16,7 @@ ENCRYPT_LIST = [
 
 
 def api_auth_method(request):
+    response = BaseResponse()
     auth_key = request.META.get('HTTP_AUTH_KEY')
     if not auth_key:
         return False
@@ -44,7 +48,12 @@ def api_auth_method(request):
         if n == encrypt:
             exist = True
     for k in del_keys:
-        del ENCRYPT_LIST[k]
+        try:
+            del ENCRYPT_LIST[k]
+        except Exception as e:
+            response.message = str(e)
+            models.ErrorLog.objects.create(obj='auth-check', title='api_auth_method',
+                                           content=traceback.format_exc())
 
     if exist:
         return False
