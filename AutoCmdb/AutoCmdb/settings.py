@@ -105,13 +105,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
@@ -132,3 +132,7 @@ AUTH_USER_MODEL = "repository.UserProfile"
 ASSET_AUTH_KEY = '299095cc-1330-11e5-b06a-a45e60bec08b'
 ASSET_AUTH_HEADER_NAME = 'HTTP_AUTH_KEY'
 ASSET_AUTH_TIME = 2
+
+# 数据库账号密码
+DB_USER = 'yang'
+DB_PASS = '111111'

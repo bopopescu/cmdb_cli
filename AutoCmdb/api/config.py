@@ -5,7 +5,7 @@ PLUGINS_DICT = {
     # 'nic': 'api.service.asset.HandleNic',
     # 'memory': 'api.service.asset.HandleMemory',
     # 'disk': 'api.service.asset.HandleDisk',
-    'mysql': 'api.service.database.HandleMysql',
-    'instanceinfo': 'api.service.database.HandleInstance',
-    'MHA': 'api.service.database.HandleMHA',
+    # 'mysql': 'api.service.database.HandleMysql',
+    # 'instanceinfo': 'api.service.database.HandleInstance',
+    # 'MHA': 'api.service.database.HandleMHA',
 }

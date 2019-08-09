@@ -55,28 +55,31 @@ class HandleMysql(object):
     def process(server_obj, server_info, user_obj):
         response = BaseResponse()
         try:
-            nic_info = server_info['nic']
-            if not nic_info['status']:
+            database_info = server_info['database']
+            print(database_info)
+
+            if not database_info['status']:
                 response.status = False
-                models.ErrorLog.objects.create(asset_obj=server_obj.asset, title='nic-agent', content=nic_info['error'])
+                models.ErrorLog.objects.create(asset_obj=server_obj.asset, title='nic-agent', content=database_info['error'])
                 return response
 
-            client_nic_dict = nic_info['data']
-            nic_obj_list = models.NIC.objects.filter(server_obj=server_obj)
-            nic_name_list = map(lambda x: x, (item.name for item in nic_obj_list))
+            client_mysql_dict = database_info['data']
+            print(client_mysql_dict)
+            mysql_obj_list = models.MysqlInfo.objects.filter(server_obj=server_obj)
+            mysql_name_list = map(lambda x: x, (item.hostname for item in mysql_obj_list))
 
-            update_list = agorithm.get_intersection(set(client_nic_dict.keys()), set(nic_name_list))
-            add_list = agorithm.get_exclude(client_nic_dict.keys(), update_list)
-            del_list = agorithm.get_exclude(nic_name_list, update_list)
+            update_list = agorithm.get_intersection(set(client_mysql_dict.keys()), set(mysql_name_list))
+            add_list = agorithm.get_exclude(client_mysql_dict.keys(), update_list)
+            del_list = agorithm.get_exclude(mysql_name_list, update_list)
 
-            HandleMysql._add_nic(add_list, client_nic_dict, server_obj, user_obj)
-            HandleMysql._update_nic(update_list, nic_obj_list, client_nic_dict, server_obj, user_obj)
-            HandleMysql._del_nic(del_list, nic_obj_list, server_obj, user_obj)
+            # 后面进行 接收数据模块 开发
+            # HandleMysql._add_nic(add_list, client_mysql_dict, server_obj, user_obj)
+            # HandleMysql._update_nic(update_list, mysql_obj_list, client_mysql_dict, server_obj, user_obj)
+            # HandleMysql._del_nic(del_list, mysql_name_list, server_obj, user_obj)
 
         except Exception as e:
             response.status = False
-            models.ErrorLog.objects.create(asset_obj=server_obj.asset, title='nic-run', content=traceback.format_exc())
-
+            models.ErrorLog.objects.create(obj=server_obj.hostname, title='mysql-run', content=traceback.format_exc())
         return response
 
     @staticmethod
@@ -233,7 +236,7 @@ class HandleInstance(object):
 
         except Exception as e:
             response.status = False
-            models.ErrorLog.objects.create(asset_obj=server_obj.asset, title='nic-run', content=traceback.format_exc())
+            models.ErrorLog.objects.create(asset_obj=server_obj.hostname, title='nic-run', content=traceback.format_exc())
 
         return response
 

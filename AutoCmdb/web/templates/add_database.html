@@ -1,7 +1,11 @@
 {% extends 'layout/_layout.html' %}
 
 {% block css %}
-
+    <style>
+        .padd-top {
+            padding-top: 5%;
+        }
+    </style>
 
 {% endblock %}
 
@@ -12,11 +16,79 @@
         <li class="active">添加数据库</li>
     </ol>
     <div style="padding: 5px 8px;">
-
-
     </div>
+    <div class="col-sm-offset-1 col-md-10">
+        <div class="form-inline">
+            <div class="form-group col-sm-6">
+                <div class="padd-top">
+                    <label for="databaseName">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;库名： </label>
+                    <input type="text" class="form-control" id="databaseName" placeholder="库名">
+                </div>
+                <div class="padd-top">
+                    <label for="databasePort">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;端口： </label>
+                    <input type="text" class="form-control" id="databasePort" placeholder="port">
+                </div>
 
+                <div class="padd-top">
+                    <label for="DBhostname">&nbsp;&nbsp;&nbsp;&nbsp;主机名： </label>
+                    <input type="text" class="form-control" id="DBhostname" placeholder="主机名">
+                </div>
+                <div class="padd-top">
+                    <label for="instanceName">&nbsp;&nbsp;&nbsp;&nbsp;实例名： </label>
+                    <input type="text" class="form-control" id="instanceName" placeholder="实例名">
+                </div>
 
+                <div class="padd-top">
+                    <label for="masterIP">&nbsp;&nbsp;&nbsp;&nbsp;主库IP： </label>
+                    <input type="text" class="form-control" id="masterIP" placeholder="主库IP">
+                </div>
+
+                <div class="padd-top">
+                    <label for="masterPort">主库端口： </label>
+                    <input type="text" class="form-control" id="masterPort" placeholder="主库PORT">
+                </div>
+            </div>
+
+            <div class="form-group col-sm-6">
+                <div class="padd-top">
+                    <label for="databaseRole">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主/从： </label>
+                    <input type="text" class="form-control" id="databaseRole" placeholder="master/slave">
+                </div>
+                <div class="padd-top">
+                    <label for="databaseIP">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IP:
+                        &nbsp;</label>
+                    <input type="text" class="form-control" id="databaseIP" placeholder="IP">
+                </div>
+                <div class="padd-top">
+                    <label for="BusinessUnit">&nbsp;&nbsp;&nbsp;&nbsp;业务线： </label>
+                    <input type="text" class="form-control" id="BusinessUnit" placeholder="业务线">
+                </div>
+
+                <div class="padd-top">
+                    <label for="realmName">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;域名：</label>
+                    <input type="text" class="form-control" id="realmName" placeholder="域名">
+                </div>
+                <div class="padd-top">
+                    <label for="db_version">版本：&nbsp; </label>
+                    <select class="form-control" name="db_version" id="db_version">
+                        <option value="5.7" selected="selected">5.7</option>
+                        <option value="8.0">8.0</option>
+                        <option value="5.6">5.6</option>
+                    </select>&nbsp;&nbsp;
+                </div>
+            </div>
+
+            <div class="form-group col-md-offset-3 col-md-4">
+
+                <div style="padding-top: 15%">
+
+                    <button id="cancel-btn" type="submit" class="btn btn-warning">取消</button>
+                    <button id="save-btn" type="submit" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 {% endblock %}
 
@@ -30,6 +102,46 @@
             $.initMenu('#menu_database');
         });
 
+        $("#save-btn").on('click', function () {
+            // $(this) ==》 保存按钮
+            var databaseName = $("#databaseName").val();
+            var databasePort = $("#databasePort").val();
+            var DBhostname = $("#DBhostname").val();
+            var instanceName = $("#instanceName").val();
+            var masterIP = $("#masterIP").val();
+            var masterPort = $("#masterPort").val();
+            var databaseRole = $("#databaseRole").val();
+            var databaseIP = $("#databaseIP").val();
+            var BusinessUnit = $("#BusinessUnit").val();
+            var realmName = $("#realmName").val();
+            var db_version = $("#db_version").find(':selected').text();
+            $.ajax({
+                url: '/add-database.html',
+                type: 'post',
+
+                data: {
+                    'db_name': databaseName,
+                    'role': databaseRole,
+                    'hostname': DBhostname,
+                    'ip': databaseIP,
+                    'service_name': BusinessUnit,
+                    'port': databasePort,
+                    'description': instanceName,
+                    'master_ip': masterIP,
+                    'master_port': masterPort,
+                    'realm_name': realmName,
+                    'version': db_version
+                },
+                success: function (args) {
+                    if (args.status) {
+                        location.href = '/databases.html'
+                    } else {
+                        alert('error')
+                    }
+                }
+
+            })
+        })
 
     </script>
 {% endblock %}

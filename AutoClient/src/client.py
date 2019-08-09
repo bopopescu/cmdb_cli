@@ -219,9 +219,12 @@ class AutoSSH(AutoBase):
             pool.shutdown(wait=True)
 
     def run(self, hostname, module):
+        print(hostname)
         # ssh salt 方式会链接hostname来进行执行命令
         server_info = plugins.get_server_info(hostname)
+        server_info.data['hostname'] = hostname
         server_json = Json.dumps(server_info.data)
+        print(server_json)
         if module == 'database':
             self.post_database(server_json, self.callback)
         elif module == 'asset':

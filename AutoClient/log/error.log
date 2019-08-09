@@ -1237,3 +1237,205 @@ KeyError: 'port'
 2019-07-30 09:36:17,031  - ERROR :  [172.16.111.131]资产不存在
 2019-07-30 09:36:22,819  - ERROR :  [172.16.111.131]资产不存在
 2019-07-30 09:36:22,822  - ERROR :  [172.16.111.131]资产不存在
+2019-07-30 10:17:14,716  - ERROR :  [172.16.111.131]数据库不存在
+2019-07-30 10:17:14,724  - ERROR :  [172.16.111.131]数据库不存在
+2019-07-30 10:22:53,822  - ERROR :  [172.16.111.131]数据库不存在
+2019-07-30 10:22:53,833  - ERROR :  [172.16.111.131]数据库不存在
+2019-07-30 10:23:12,101  - ERROR :  [172.16.111.131]数据库不存在
+2019-07-30 10:23:12,101  - ERROR :  [172.16.111.131]数据库不存在
+2019-07-30 10:25:17,505  - ERROR :  [172.16.111.131]数据库不存在
+2019-07-30 10:25:17,508  - ERROR :  [172.16.111.131]数据库不存在
+2019-07-30 10:25:25,989  - ERROR :  [172.16.111.131]数据库不存在
+2019-07-30 10:25:25,992  - ERROR :  [172.16.111.131]数据库不存在
+2019-07-30 10:26:29,598  - ERROR :  [172.16.111.131]数据库不存在
+2019-07-30 10:26:29,600  - ERROR :  [172.16.111.131]数据库不存在
+2019-07-30 10:26:45,632  - ERROR :  [172.16.111.131]数据库不存在
+2019-07-30 10:26:45,635  - ERROR :  [172.16.111.131]数据库不存在
+2019-07-30 10:33:33,305  - ERROR :  [{'ip': '172.16.111.131', 'hostname': '5e6348bc3336'}]数据库不存在
+2019-07-30 10:33:33,385  - ERROR :  [{'ip': '172.16.111.131', 'hostname': 'ykydeMacBook-Pro.local'}]数据库不存在
+2019-07-30 10:45:34,118  - ERROR :  ykydeMacBook-Pro.local BasicPlugin Error:Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 63, in linux
+    'hostname': self.os_hostname(),
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 43, in os_hostname
+    hostname = self.exec_shell_cmd('hostname')
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 45, in exec_shell_cmd
+    output = func(cmd)
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 29, in ssh
+    ssh.connect(hostname=self.hostname, port=settings.SSH_PORT, username=settings.SSH_USER, pkey=private_key)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/client.py", line 362, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.193.8 or fe80::1092:ebb6:6f19:e4dc%en0
+
+2019-07-30 10:45:34,319  - ERROR :  5e6348bc3336 BasicPlugin Error:Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 63, in linux
+    'hostname': self.os_hostname(),
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 43, in os_hostname
+    hostname = self.exec_shell_cmd('hostname')
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 45, in exec_shell_cmd
+    output = func(cmd)
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 29, in ssh
+    ssh.connect(hostname=self.hostname, port=settings.SSH_PORT, username=settings.SSH_USER, pkey=private_key)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/client.py", line 334, in connect
+    to_try = list(self._families_and_addresses(hostname, port))
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/client.py", line 204, in _families_and_addresses
+    hostname, port, socket.AF_UNSPEC, socket.SOCK_STREAM
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+2019-07-30 10:45:56,890  - ERROR :  ykydeMacBook-Pro.local BasicPlugin Error:Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 63, in linux
+    'hostname': self.os_hostname(),
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 43, in os_hostname
+    hostname = self.exec_shell_cmd('hostname')
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 45, in exec_shell_cmd
+    output = func(cmd)
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 29, in ssh
+    ssh.connect(hostname=self.hostname, port=settings.SSH_PORT, username=settings.SSH_USER, pkey=private_key)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/client.py", line 362, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.193.8 or fe80::1092:ebb6:6f19:e4dc%en0
+
+2019-07-30 10:45:56,892  - ERROR :  5e6348bc3336 BasicPlugin Error:Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 63, in linux
+    'hostname': self.os_hostname(),
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 43, in os_hostname
+    hostname = self.exec_shell_cmd('hostname')
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 45, in exec_shell_cmd
+    output = func(cmd)
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 29, in ssh
+    ssh.connect(hostname=self.hostname, port=settings.SSH_PORT, username=settings.SSH_USER, pkey=private_key)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/client.py", line 334, in connect
+    to_try = list(self._families_and_addresses(hostname, port))
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/client.py", line 204, in _families_and_addresses
+    hostname, port, socket.AF_UNSPEC, socket.SOCK_STREAM
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+2019-07-30 10:46:11,073  - ERROR :  ykydeMacBook-Pro.local BasicPlugin Error:Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 63, in linux
+    'hostname': self.os_hostname(),
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 43, in os_hostname
+    hostname = self.exec_shell_cmd('hostname')
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 45, in exec_shell_cmd
+    output = func(cmd)
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 29, in ssh
+    ssh.connect(hostname=self.hostname, port=settings.SSH_PORT, username=settings.SSH_USER, pkey=private_key)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/client.py", line 362, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.193.8 or fe80::1092:ebb6:6f19:e4dc%en0
+
+2019-07-30 10:46:11,074  - ERROR :  5e6348bc3336 BasicPlugin Error:Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 63, in linux
+    'hostname': self.os_hostname(),
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/basic.py", line 43, in os_hostname
+    hostname = self.exec_shell_cmd('hostname')
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 45, in exec_shell_cmd
+    output = func(cmd)
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/base.py", line 29, in ssh
+    ssh.connect(hostname=self.hostname, port=settings.SSH_PORT, username=settings.SSH_USER, pkey=private_key)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/client.py", line 334, in connect
+    to_try = list(self._families_and_addresses(hostname, port))
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/paramiko/client.py", line 204, in _families_and_addresses
+    hostname, port, socket.AF_UNSPEC, socket.SOCK_STREAM
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+2019-07-30 10:46:28,760  - ERROR :  [172.16.111.131]数据库不存在
+2019-07-30 10:46:28,762  - ERROR :  [172.16.111.131]数据库不存在
+2019-07-30 10:46:58,352  - ERROR :  [172.16.111.131]数据库不存在
+2019-07-30 10:46:58,353  - ERROR :  [172.16.111.131]数据库不存在
+2019-07-30 11:37:11,204  - ERROR :  5e6348bc3336 Mysql info collect fail Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/database.py", line 63, in linux
+    cli_db_info = client_obj.getinfo(settings.CLIENT_DATABASE_CONF['sql_list'][subject])
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/database.py", line 31, in getinfo
+    cur.execute(sql, args)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1054, "Unknown column 'G' in 'where clause'")
+
+2019-07-30 11:37:11,211  - ERROR :  ykydeMacBook-Pro.local Mysql info collect fail Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/database.py", line 63, in linux
+    cli_db_info = client_obj.getinfo(settings.CLIENT_DATABASE_CONF['sql_list'][subject])
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/database.py", line 31, in getinfo
+    cur.execute(sql, args)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1054, "Unknown column 'G' in 'where clause'")
+
+2019-07-30 11:39:33,211  - ERROR :  5e6348bc3336 Mysql info collect fail Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/database.py", line 63, in linux
+    cli_db_info = client_obj.getinfo(settings.CLIENT_DATABASE_CONF['sql_list'][subject])
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/database.py", line 31, in getinfo
+    cur.execute(sql, args)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1054, "Unknown column 'G' in 'where clause'")
+
+2019-07-30 11:39:33,215  - ERROR :  ykydeMacBook-Pro.local Mysql info collect fail Traceback (most recent call last):
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/database.py", line 63, in linux
+    cli_db_info = client_obj.getinfo(settings.CLIENT_DATABASE_CONF['sql_list'][subject])
+  File "/Users/yky/PycharmProjects/cmdb_db/AutoClient/src/plugins/database.py", line 31, in getinfo
+    cur.execute(sql, args)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1054, "Unknown column 'G' in 'where clause'")
+

@@ -49,7 +49,16 @@ class Database(BaseServiceList):
                 'title': "IP",
                 'display': 1,
                 'text': {'content': "{n}", 'kwargs': {'n': '@ip'}},
-                'attr': {'name': 'ip', 'id': '@ip', 'origin': '@ip'}
+                'attr': {'name': 'ip', 'id': '@ip', 'origin': '@ip','edit-enable': 'true',
+                         'edit-type': 'input', }
+            },
+            {
+                'q': 'port',
+                'title': "PORT",
+                'display': 1,
+                'text': {'content': "{n}", 'kwargs': {'n': '@port'}},
+                'attr': {'name': 'port', 'id': '@port', 'origin': '@port','edit-enable': 'true',
+                         'edit-type': 'input', }
             },
             {
                 'q': 'service_name',

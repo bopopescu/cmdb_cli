@@ -1,0 +1,226 @@
+{% extends 'layout/_layout.html' %}
+
+{% block css %}
+    <style>
+        .padd-top {
+            padding-top: 5%;
+        }
+
+    </style>
+    <link rel="stylesheet" href="/web/static/layui/css/layui.css">
+
+{% endblock %}
+
+{% block conent %}
+    <ol class="breadcrumb" style="margin-bottom: 0;">
+        <li><a href="/cmdb.html">首页</a></li>
+        <li><a href="/grants.html">权限列表</a></li>
+        <li class="active">申请授权</li>
+    </ol>
+    <div style="padding: 5px 8px;">
+    </div>
+
+    <div class="form-inline col-md-offset-2 col-md-8">
+        <div class="form-group col-md-12">
+            <div class="padd-top">
+                <label class="col-md-offset-2 col-sm-4" for="requestUser">申请人：</label>
+                <input type="text" class="form-control col-sm-6" id="requestUser" placeholder="申请人">
+            </div>
+            <div class="padd-top">
+                <label class="col-md-offset-2 col-sm-4" for="grantIP">被授权IP：</label>
+                <input type="text" class="form-control col-sm-6" id="grantIP" placeholder="被授权IP">
+            </div>
+            <div class="padd-top">
+                <label class="col-md-offset-2 col-sm-4" for="dbUsername">用户名：</label>
+                <input type="text" class="form-control col-sm-6" id="dbUsername" placeholder="用户名">
+            </div>
+            <div class="padd-top">
+                <label class="col-md-offset-2 col-sm-4" for="dbPassword">密码：</label>
+                <input type="password" class="form-control col-sm-6" id="dbPassword" placeholder="密码">
+            </div>
+            <div class="padd-top">
+                <label class="col-md-offset-2 col-sm-4" for="dbPermission">申请权限：</label>
+                <div>
+                    <select class="form-control" name="grantOption" id="dbPermission">
+                        <option value="RO">只读&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="RW">读写&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                    </select>
+                </div>
+            </div>
+            <div class="padd-top">
+                <label class="col-md-offset-2 col-sm-4" for="description">描述：</label>
+                <textarea class="col-sm-6 form-control" id="description"></textarea>
+            </div>
+            <div class="form-group col-md-offset-2 col-md-8">
+                <div>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>IP</th>
+                            <th>端口</th>
+                            <th>库名</th>
+                            <th>
+                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#myModal">
+                                    搜索
+                                </button>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody id="id-tbody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="form-group col-md-offset-4 col-md-4">
+                <div style="padding-top: 15%">
+                    <button id="cancel-btn" type="submit" class="btn btn-warning">取消</button>
+                    <button id="save-btn" type="submit" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <!-- Modal 模态框确认数据库是否存在      -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">数据库信息</h4>
+                        </div>
+                        <div class="modal-body" style="height: 180px">
+
+                            <div class="col-md-offset-2 col-md-8" style="padding-top: 10px">
+                                <label class="col-sm-4" for="databaseIP">数据库IP:</label>
+                                <input class="col-sm-8 form-control" type="text" id="databaseIP" placeholder="IP">
+                            </div>
+                            <div class="col-md-offset-2 col-md-8" style="padding-top: 10px">
+                                <label class="col-sm-4" for="databaseName">库名：</label>
+                                <input type="text" class="form-control col-sm-8" id="databaseName" placeholder="库名">
+                            </div>
+                            <div class="col-md-offset-2 col-md-8" style="padding-top: 10px">
+                                <label class="col-sm-4" for="databasePort">端口：</label>
+                                <input type="text" class="form-control col-sm-8" id="databasePort"
+                                       placeholder="port">
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                            <button id="model-save" type="button" class="btn btn-primary">确定</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="/web/static/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/web/static/plugins/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/web/static/js/nb-list.js"></script>
+    <script type="text/javascript" src="/web/static/layui/layui.js"></script>
+
+    <script>
+        $(function () {
+            $.initMenu('#menu_grant');
+        });
+
+        $("#save-btn").on('click', function () {
+            // $(this) ==》 保存按钮
+            var db_ip = $("#databaseIP").val();
+            var db_name = $("#databaseName").val();
+            var port = $("#databasePort").val();
+            var request_user = $("#requestUser").val();
+            var host_ip = $("#grantIP").val();
+            var db_username = $("#dbUsername").val();
+            var db_permission = $("#dbPermission").val();
+            var db_password = $("#dbPassword").val();
+            var description = $("#description").val();
+
+            $.ajax({
+                url: '/add-grant.html',
+                type: 'post',
+                data: {
+                    'db_ip': db_ip,
+                    'db_name': db_name,
+                    'port': port,
+                    'host_ip': host_ip,
+                    'request_user': request_user,
+                    'db_username': db_username,
+                    'db_password': db_password,
+                    'status':'待审批',
+                    'db_permission': db_permission,
+                    'description': description
+                },
+                success: function (args) {
+                    if (args.status) {
+                        location.href = '/grants.html'
+                    } else {
+                        alert('授权失败，该用户已经存在！')
+                    }
+                }
+
+            })
+        });
+
+        $("#model-save").on('click', function () {
+            var db_ip = $("#databaseIP").val();
+            var db_name = $("#databaseName").val();
+            var port = $("#databasePort").val();
+            // $(this) = 确认框
+            $.ajax({
+                url: '/grant-define',
+                type: 'post',
+                data: {
+                    'ip': db_ip,
+                    'db_name': db_name,
+                    'port': port
+                },
+                success: function (arg) {
+                    if (arg.status) {
+                        add_dbinfo()
+                    }else {
+                        alert('数据库不存在')
+                    }
+                }, error: function (arg) {
+                    alert('error,请联系管理员。')
+                }
+            })
+
+        });
+
+        function add_dbinfo() {
+            $("#myModal").modal('toggle');
+            var tr = document.createElement('tr');
+            var tdEle = document.createElement('td');
+            tdEle.innerHTML = $("#databaseIP").val();
+            tr.append(tdEle);
+
+            var tdEle = document.createElement('td');
+            tdEle.innerHTML = $("#databaseName").val();
+            tr.append(tdEle);
+            var tdEle = document.createElement('td');
+            tdEle.innerHTML = $("#databasePort").val();
+            tr.append(tdEle);
+
+            var tdEle = document.createElement('td');
+            tdEle.innerHTML = '<button class="layui-btn layui-btn-sm layui-btn-danger" onclick="tr_del(this)">删除</button>';
+            tr.append(tdEle);
+            $("#id-tbody").append(tr)
+        }
+
+        function tr_del(ths) {
+            $(ths).parent().parent().remove();
+        }
+
+    </script>
+{% endblock %}

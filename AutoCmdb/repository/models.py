@@ -275,38 +275,51 @@ class MysqlInfo(models.Model):
     ip = models.GenericIPAddressField()
     service_name = models.CharField(max_length=10)  # 业务名称
     port = models.IntegerField()
-    description = models.CharField(max_length=50, null=True)  # 唯一标识
-    root_pass = models.CharField(max_length=30)  # 密码
-    backup_ip = models.GenericIPAddressField(null=True)  # 备份机器
-    archive_ip = models.GenericIPAddressField(null=True)  # 归档机器
+    description = models.CharField(max_length=50, null=True)  # 唯一标识/实例名
     master_ip = models.GenericIPAddressField(null=True)
     master_port = models.IntegerField(null=True)
+    BP_size = models.CharField(max_length=16)
     version = models.CharField(max_length=15, default='5.7.23')  # 版本
     search_flag = models.CharField(max_length=10, default=0)  # 是否为线下查询
     realm_name = models.CharField(max_length=256, default='')  # 域名
 
     class Meta:
-        unique_together = ("ip", 'hostname', "port", "db_name", "role")
+        unique_together = ('hostname', "ip", "port", "db_name", "role")
+
         db_table = 'MysqlInfo'
 
 
-class DBGrantHistory(models.Model):
-    host_ip = models.GenericIPAddressField()  # 被授权主机
-    database_ip = models.GenericIPAddressField()  # 从库or 主库ip
-    port = models.IntegerField()  # 主库ip 和端口能确定唯一的数据库名字 进而查出业务名称。
-    request_user = models.CharField(max_length=30)
-    operation_user = models.CharField(max_length=30, null=True)  # 申请人
-    db_username = models.CharField(max_length=30)
-    db_password = models.CharField(max_length=100)
-    status = models.CharField(default=0, max_length=10)
-    description = models.CharField(max_length=100, null=True)
-    db_permission = models.CharField(max_length=30)
-    db_name = models.CharField(max_length=60)
-    create_time = models.DateTimeField(auto_now_add=True)  # 申请时间
-    judge_time = models.DateTimeField(auto_now=True)  # 审批时间
+class SystemRecord(models.Model):
+    # 数据库信息
+    hostname = models.CharField(max_length=50)
+    ip = models.GenericIPAddressField()
+    service_name = models.CharField(max_length=10)  # 业务名称
+    useful = models.CharField(max_length=50, null=True)  # 用途
+    realm_name = models.CharField(max_length=256, default='')  # 域名
+    status = models.CharField(max_length=16, default='')  # 域名
 
     class Meta:
-        unique_together = ("database_ip", "db_username", "port", 'db_permission', 'host_ip')
+        unique_together = ('hostname', "ip")
+        db_table = 'SystemRecord'
+
+
+class DBGrantHistory(models.Model):
+    db_ip = models.GenericIPAddressField()  # 从库or 主库ip
+    db_name = models.CharField(max_length=60)
+    port = models.IntegerField()  # 主库ip 和端口能确定唯一的数据库名字 进而查出业务名称。
+    host_ip = models.GenericIPAddressField()  # 被授权主机
+    request_user = models.CharField(max_length=30)  # 申请人
+    db_permission = models.CharField(max_length=30)
+    operation_user = models.CharField(max_length=30, null=True)  # 授权人
+    db_username = models.CharField(max_length=30, null=False)
+    db_password = models.CharField(max_length=100, null=False)
+    status = models.CharField(default=0, max_length=10)  # 授权状态
+    description = models.CharField(max_length=100, null=True)
+    create_time = models.DateTimeField(auto_now=True)  # 申请时间
+    judge_time = models.DateTimeField(auto_now_add=True)  # 审批时间
+
+    class Meta:
+        unique_together = ("db_ip", "db_username", "port", 'db_name', 'host_ip')
         db_table = 'DBGrantHistory'
         # 同一账户同一库的同一状态的数据
 
@@ -331,13 +344,14 @@ class InstanceInfo(models.Model):  # 实例信息表
 
 
 class BackupInfo(models.Model):
-    db_ip = models.GenericIPAddressField()  # 从库or 主库ip
+    db_ip = models.GenericIPAddressField()  # 从库 ip
     port = models.IntegerField()
     db_name = models.CharField(max_length=32, default='')
+    description = models.CharField(max_length=50, null=True)
     backup_host = models.GenericIPAddressField()
     backup_dir = models.CharField(max_length=64, default='/data/')
     create_time = models.DateTimeField(auto_now_add=True)
-    backup_time = models.DateTimeField(auto_now=True)
+    backup_time = models.CharField(max_length=32)
 
     class Meta:
         unique_together = ("db_name", "db_ip", "port",)
@@ -383,6 +397,3 @@ class DBChangeLog(models.Model):
     option = models.CharField(max_length=32, default='')
     create_time = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=16, default='')
-
-
-

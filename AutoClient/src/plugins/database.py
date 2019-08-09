@@ -24,11 +24,15 @@ class GetServerDBInfo(object):
         self.passwd = passwd
 
     def getinfo(self, sql, *args):
+        # print(args[0])
         dbinfo = None
         conn = pymysql.connect(host=self.host, user=self.user, port=self.port, password=self.passwd,
                                charset='utf8')
         cur = conn.cursor(cursor=pymysql.cursors.DictCursor)
-        cur.execute(sql, args)
+        if args:
+            cur.execute(sql, args[0])
+        else:
+            cur.execute(sql, [])
         if sql.find('select') >= 0 or sql.find('show') >= 0:
             dbinfo = cur.fetchall()
         else:

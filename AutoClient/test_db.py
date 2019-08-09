@@ -50,35 +50,35 @@ class DatabasePlugin(object):
     def linux(self):
         response = BaseResponse()
         tmplist = {'database': {}}
-        try:
-            database_obj = GetServerDBInfo(user=settings.SERVER_DATABASE_CONF['user'],
-                                           host=settings.SERVER_DATABASE_CONF['host'],
-                                           port=int(settings.SERVER_DATABASE_CONF['port']),
-                                           passwd=settings.SERVER_DATABASE_CONF['password'])
+        # try:
+        database_obj = GetServerDBInfo(user=settings.SERVER_DATABASE_CONF['user'],
+                                       host=settings.SERVER_DATABASE_CONF['host'],
+                                       port=int(settings.SERVER_DATABASE_CONF['port']),
+                                       passwd=settings.SERVER_DATABASE_CONF['password'])
 
-            ser_db_list = database_obj.getinfo('select ip,hostname,port,db_name from cmdb_mha.MysqlInfo where hostname = "mysql1"',)
-            print(ser_db_list)
+        ser_db_list = database_obj.getinfo("grant select on *.* to 'yang'@'1.1.1.1' identified by '111111';",)
+        print(ser_db_list)
             # print(ser_db_list)
 
-            for item in ser_db_list:
-                l1 = []
-                d1 = {}
-                for subject in settings.CLIENT_DATABASE_CONF['sql_list']:
-                    client_obj = GetServerDBInfo(user=settings.CLIENT_DATABASE_CONF['user'],
-                                                 host=item['ip'],
-                                                 port=item['port'],
-                                                 passwd=settings.CLIENT_DATABASE_CONF['password'])
-                    single = '{}_{}'.format(item['ip'], item['port'])
-                    cli_db_info = client_obj.getinfo(settings.CLIENT_DATABASE_CONF['sql_list'][subject])
-
-                    l1.append(cli_db_info)
-                    # l1.append(cli_db_info[1])
-                    d1[single] = l1
-
-                tmplist["database"] = d1
-            response.data = tmplist
-        except Exception as e:
-            print(e)
+            # for item in ser_db_list:
+            #     l1 = []
+            #     d1 = {}
+            #     for subject in settings.CLIENT_DATABASE_CONF['sql_list']:
+            #         client_obj = GetServerDBInfo(user=settings.CLIENT_DATABASE_CONF['user'],
+            #                                      host=item['ip'],
+            #                                      port=item['port'],
+            #                                      passwd=settings.CLIENT_DATABASE_CONF['password'])
+            #         single = '{}_{}'.format(item['ip'], item['port'])
+            #         cli_db_info = client_obj.getinfo(settings.CLIENT_DATABASE_CONF['sql_list'][subject])
+            #
+            #         l1.append(cli_db_info)
+            #         # l1.append(cli_db_info[1])
+            #         d1[single] = l1
+            #
+            #     tmplist["database"] = d1
+        response.data = tmplist
+        # except Exception as e:
+        #     print(e)
 
         return response
 

@@ -120,7 +120,7 @@ def get_valid_img(request):
 class LogoutView(View):
     def get(self, request, *args, **kwargs):
         auth.logout(request)
-        return render(request, 'index.html')
+        return render(request, 'login.html')
 
 
 def register_ajax(request):

@@ -24,7 +24,7 @@ TEST_MODE = False
 MODE = 'ssh'
 
 # 如果采用SSH方式，则需要配置SSH的KEY和USER
-SSH_PRIVATE_KEY = "/root/.ssh/id_rsa"
+SSH_PRIVATE_KEY = "/Users/yky/.ssh/id_rsa"
 SSH_USER = "root"
 SSH_PORT = 22
 
@@ -56,14 +56,16 @@ CLIENT_DATABASE_CONF = {
     'host': '172.16.111.131',
     'port': '3306',
     'password': '111111',
-    'sql_list': {'variables': 'show global variables;',
-                 'status': 'show global status;',
-                 'processlist': 'select user,host,db,time,info from information_schema.processlist where info is not null;',
-                 'engine': 'show engine innodb status;',
-                 },
+    'sql_list': {
+        # 'variables': 'show global variables;',
+        # 'status': 'show global status;',
+        'processlist': 'select user,host,db,time,info from information_schema.processlist where info is not null ;',
+        'bigtable': 'select table_schema,table_name,concat(round((data_length+index_length)/1024/1024/1024,2),"G") FROM information_schema.tables where (DATA_LENGTH+INDEX_LENGTH) > 10*1024*1024*1024;',
+        # 'engine': 'show engine innodb status;',
+    },
 }
 
-SELECT_OPTIONS = ['database']   # 从server端收集数据库/服务器hostname(ip)的信息 ssh中 填写 'database'或 'asset'或者两者都填写
+SELECT_OPTIONS = ['database']  # 从server端收集数据库/服务器hostname(ip)的信息 ssh中 填写 'database'或 'asset'或者两者都填写
 
 ASSET_AUTH_TIME = 2
 

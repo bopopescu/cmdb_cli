@@ -6,6 +6,8 @@
 from django.views import View
 from django.shortcuts import render
 from django.http import JsonResponse
+from repository import models
+import json
 
 from web.service import database
 
@@ -39,3 +41,14 @@ class DatabaseDetailView(View):
 class AddDatabaseView(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'add_database.html')
+
+    def post(self, request, *args, **kwargs):
+        ret = {"status": True, "msg": ""}
+        add_info = request.POST
+        a = json.dumps(add_info)
+        try:
+            models.MysqlInfo.objects.create(**json.loads(a))
+        except Exception as e:
+            print(e)
+            ret = {"status": False, "msg": "添加数据库失败"}
+        return JsonResponse(ret)

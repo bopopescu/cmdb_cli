@@ -123,7 +123,6 @@ class DatabaseView(View):
         server_info = json.loads(request.body.decode('utf-8'))
         server_info = json.loads(server_info)
         hostname = server_info['hostname']
-
         ret = {'code': 1000, 'message': '[%s]更新完成' % hostname}
 
         mysql_obj = models.MysqlInfo.objects.filter(hostname=hostname).first()

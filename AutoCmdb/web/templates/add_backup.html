@@ -1,0 +1,113 @@
+{% extends 'layout/_layout.html' %}
+
+{% block css %}
+    <style>
+        .padd-top {
+            padding-top: 5%;
+        }
+    </style>
+
+{% endblock %}
+
+{% block conent %}
+    <ol class="breadcrumb" style="margin-bottom: 0;">
+        <li><a href="/cmdb.html">首页</a></li>
+        <li><a href="/backups.html">备份列表</a></li>
+        <li class="active">添加备份</li>
+    </ol>
+    <div style="padding: 5px 8px;">
+    </div>
+    <div class="col-sm-offset-1 col-md-10">
+        <div class="form-inline">
+            <div class="form-group col-sm-6">
+                <div class="padd-top">
+                    <label for="databaseIP">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IP: &nbsp;&nbsp;</label>
+                    <input type="text" class="form-control" id="databaseIP" placeholder="IP">
+                </div>
+                <div class="padd-top">
+                    <label for="databaseName">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;库名： </label>
+                    <input type="text" class="form-control" id="databaseName" placeholder="库名">
+                </div>
+                <div class="padd-top">
+                    <label for="databasePort">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;端口： </label>
+                    <input type="text" class="form-control" id="databasePort" placeholder="port">
+                </div>
+                <div class="padd-top">
+                    <label for="backupTime">备份时间：</label>
+                    <input type="text" class="form-control" id="backupTime" placeholder="格式：01:05(小时:分钟)">
+                </div>
+            </div>
+
+            <div class="form-group col-sm-6">
+                <div class="padd-top">
+                    <label for="instanceName">&nbsp;&nbsp;&nbsp;&nbsp;实例名： </label>
+                    <input type="text" class="form-control" id="instanceName" placeholder="实例名">
+                </div>
+                <div class="padd-top">
+                    <label for="backupIP">&nbsp;&nbsp;&nbsp;备份IP：&nbsp;</label>
+                    <input type="text" class="form-control" id="backupIP" placeholder="备份IP">
+                </div>
+                <div class="padd-top">
+                    <label for="backupDir">备份目录：</label>
+                    <input type="text" class="form-control" id="backupDir" placeholder="备份目录">
+                </div>
+            </div>
+
+            <div class="form-group col-md-offset-4 col-md-4">
+
+                <div style="padding-top: 15%">
+                    <button id="cancel-btn" type="submit" class="btn btn-warning">取消</button>
+                    <button id="save-btn" type="submit" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="/web/static/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/web/static/plugins/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/web/static/js/nb-list.js"></script>
+
+    <script>
+        $(function () {
+            $.initMenu('#menu_backup');
+        });
+
+        $("#save-btn").on('click', function () {
+            // $(this) ==》 保存按钮
+            var databaseIP = $("#databaseIP").val();
+            var databaseName = $("#databaseName").val();
+            var databasePort = $("#databasePort").val();
+            var backupTime = $("#backupTime").val();
+            var instanceName = $("#instanceName").val();
+            var backupIP = $("#backupIP").val();
+            var backupDir = $("#backupDir").val();
+
+            $.ajax({
+                url: '/add-backup.html',
+                type: 'post',
+                data: {
+                    'db_ip': databaseIP,
+                    'db_name': databaseName,
+                    'port': databasePort,
+                    'backup_time': backupTime,
+                    'description': instanceName,
+                    'backup_host': backupIP,
+                    'backup_dir': backupDir
+                },
+                success: function (args) {
+                    if (args.status) {
+                        location.href = '/backups.html'
+                    } else {
+                        alert('error')
+                    }
+                }
+
+            })
+        })
+
+    </script>
+{% endblock %}
