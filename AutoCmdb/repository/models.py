@@ -270,14 +270,14 @@ class ErrorLog(models.Model):
 class MysqlInfo(models.Model):
     # 数据库信息
     db_name = models.CharField(max_length=50)
-    role = models.CharField(max_length=15)  # master or slave
+    role = models.CharField(max_length=15)  # main or subordinate
     hostname = models.CharField(max_length=50)
     ip = models.GenericIPAddressField()
     service_name = models.CharField(max_length=10)  # 业务名称
     port = models.IntegerField()
     description = models.CharField(max_length=50, null=True)  # 唯一标识/实例名
-    master_ip = models.GenericIPAddressField(null=True)
-    master_port = models.IntegerField(null=True)
+    main_ip = models.GenericIPAddressField(null=True)
+    main_port = models.IntegerField(null=True)
     BP_size = models.CharField(max_length=16)
     version = models.CharField(max_length=15, default='5.7.23')  # 版本
     search_flag = models.CharField(max_length=10, default=0)  # 是否为线下查询
@@ -376,18 +376,18 @@ class ArchiveTableInfo(models.Model):
 
 
 class RestoreDB(models.Model):
-    master_ip = models.GenericIPAddressField()  # master IP
-    master_port = models.IntegerField()
-    master_dbname = models.CharField(max_length=64, default='')
-    role = models.CharField(max_length=16, default='master')  # 主从信息，从库或及联主库
+    main_ip = models.GenericIPAddressField()  # main IP
+    main_port = models.IntegerField()
+    main_dbname = models.CharField(max_length=64, default='')
+    role = models.CharField(max_length=16, default='main')  # 主从信息，从库或及联主库
     backup_list = models.CharField(max_length=256, default='')  # 备份
-    slave_ip = models.GenericIPAddressField()  # master IP
-    slave_port = models.IntegerField()
-    slave_dbname = models.CharField(max_length=64, default='')
+    subordinate_ip = models.GenericIPAddressField()  # main IP
+    subordinate_port = models.IntegerField()
+    subordinate_dbname = models.CharField(max_length=64, default='')
     create_time = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        unique_together = ('master_ip',)
+        unique_together = ('main_ip',)
         db_table = 'RestoreDB'
 
 

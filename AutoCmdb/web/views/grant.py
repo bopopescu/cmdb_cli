@@ -105,11 +105,11 @@ class GrantAgreeView(View):
         2. 检查授权历史库中是否已经再次授权
         '''
         role_obj = models.MysqlInfo.objects.filter(db_name=only_info['db_name'], ip=only_info['db_ip'],
-                                                   port=only_info['port']).values('ip', 'role', 'port', 'master_ip',
-                                                                                  'master_port')
-        if role_obj[0]['role'] != 'master':
-            role_obj['ip'] = role_obj['master_ip']
-            role_obj['port'] = role_obj['master_port']
+                                                   port=only_info['port']).values('ip', 'role', 'port', 'main_ip',
+                                                                                  'main_port')
+        if role_obj[0]['role'] != 'main':
+            role_obj['ip'] = role_obj['main_ip']
+            role_obj['port'] = role_obj['main_port']
 
         grant_his_obj = models.DBGrantHistory.objects.filter(db_name=only_info['db_name'], db_ip=only_info['db_ip'],
                                                              port=only_info['port'])

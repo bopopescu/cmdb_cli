@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('repository', '0006_mysqlinfo_master_port'),
+        ('repository', '0006_mysqlinfo_main_port'),
     ]
 
     operations = [
         migrations.AlterField(
             model_name='mysqlinfo',
-            name='master_port',
+            name='main_port',
             field=models.IntegerField(null=True),
         ),
     ]

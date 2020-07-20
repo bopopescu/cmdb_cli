@@ -33,7 +33,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name='mysqlinfo',
-            name='master_ip',
+            name='main_ip',
             field=models.GenericIPAddressField(null=True),
         ),
     ]

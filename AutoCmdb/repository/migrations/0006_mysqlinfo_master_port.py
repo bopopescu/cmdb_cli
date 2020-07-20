@@ -12,7 +12,7 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AddField(
             model_name='mysqlinfo',
-            name='master_port',
+            name='main_port',
             field=models.IntegerField(default=3306),
             preserve_default=False,
         ),
